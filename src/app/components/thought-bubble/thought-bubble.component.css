@@ -1,0 +1,55 @@
+
+.thought-bubble {
+  position: absolute;
+  bottom: 20%;  /* Posiciona el bubble al 20% desde abajo */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);  /* Añadido transparencia sutil */
+  padding: 15px;
+  border-radius: 30px;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+  animation: float 2s ease-in-out infinite;
+  z-index: 2;  /* Aumentado para asegurar que esté sobre la imagen */
+  min-width: 100px;  /* Ancho mínimo para el bubble */
+}
+
+.thought-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.thought-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.thought-bubble p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  font-weight: bold;  /* Añadido para mejor legibilidad */
+}
+
+.icon-large {
+  margin: 0;
+  font-size: 16rem;
+  color: #333;
+  text-align: center;
+}

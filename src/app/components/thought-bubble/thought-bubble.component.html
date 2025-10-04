@@ -1,0 +1,6 @@
+<div class="thought-bubble" *ngIf="jugadorPensando">
+  <p>...</p>
+</div>
+<div class="thought-bubble" *ngIf="jugadaJugador && !jugadorPensando">
+  <p class="icon-large">{{ getIcon(jugadaJugador.jugada) }}</p>
+</div>
