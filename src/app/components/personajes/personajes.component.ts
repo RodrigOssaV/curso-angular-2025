@@ -26,6 +26,7 @@ export class PersonajesComponent implements OnInit {
 
   // winner
   ganador: ResultadoJuego[] = [];
+  numeroJugadorGanador: number = 0;
 
   constructor(private rickAndMortyService: RickAndMortyService) {}
 
@@ -56,7 +57,7 @@ export class PersonajesComponent implements OnInit {
     this.jugadorDosPensando = false;
 
     this.ganador.push(resultado);
-    console.log(this.ganador);
+    this.getNumeroJugadorGanador(resultado.ganador);
   }
 
   resetJuego() {
@@ -75,5 +76,23 @@ export class PersonajesComponent implements OnInit {
     this.jugadaJugarUno = undefined!;
     this.jugadaJugarDos = undefined!;
     this.ganador = [];
+  }
+
+  getNumeroJugadorGanador(ganador: Character | string){
+    if(typeof ganador === 'string') {
+      this.numeroJugadorGanador = 0; // empate
+      return
+    } 
+
+    if(typeof ganador === 'object'){
+      const { name: name_ganador } = ganador;
+      const { name: name_playerOne } = this.selectPlayerOne;
+
+      if (name_ganador === name_playerOne) {
+        this.numeroJugadorGanador = 1; // gana jugador uno
+      } else {
+        this.numeroJugadorGanador = 2; // gana jugador dos
+      }
+    }
   }
 }

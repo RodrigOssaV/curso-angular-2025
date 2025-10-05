@@ -8,6 +8,7 @@ import { ResultadoJuego } from '@app/models/jugada';
 })
 export class ResultadoJuegoComponent {
   @Input() ganador: ResultadoJuego[] = [];
+  @Input() numeroGanador: number = 0;
 
   // icon play
   iconPlay = [
