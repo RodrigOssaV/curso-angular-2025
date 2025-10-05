@@ -28,12 +28,20 @@ export class PersonajesComponent implements OnInit {
   ganador: ResultadoJuego[] = [];
   numeroJugadorGanador: number = 0;
 
+  // loading controller
+  cargandoJugadores: boolean = true;
+
   constructor(private rickAndMortyService: RickAndMortyService) {}
 
   ngOnInit(): void {
+    this.cargandoJugadores = true;
     this.rickAndMortyService.getCharacters().subscribe({
       next: (data) => {
         this.characters = data.map((c) => ({ ...c, mostrar: false }));
+
+        if (this.characters.length > 0) {
+          this.cargandoJugadores = false;
+        }
       },
       error: (error) => console.error(error),
     });
@@ -94,5 +102,9 @@ export class PersonajesComponent implements OnInit {
         this.numeroJugadorGanador = 2; // gana jugador dos
       }
     }
+  }
+
+  isSelectionLocked(): boolean {
+    return !!(this.selectPlayerOne && this.selectPlayerTwo);
   }
 }

@@ -15,6 +15,7 @@ import { ResultadoJuegoComponent } from './components/resultado-juego/resultado-
 import { ButtonResetComponent } from './components/button-reset/button-reset.component';
 import { CustomButtonComponent } from './components/custom-button/custom-button.component';
 import { BiografiaPersonajeComponent } from './components/biografia-personaje/biografia-personaje.component';
+import { NoEncontradoComponent } from './components/no-encontrado/no-encontrado.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BiografiaPersonajeComponent } from './components/biografia-personaje/bi
     ResultadoJuegoComponent,
     ButtonResetComponent,
     CustomButtonComponent,
-    BiografiaPersonajeComponent
+    BiografiaPersonajeComponent,
+    NoEncontradoComponent
   ],
   imports: [
     BrowserModule,

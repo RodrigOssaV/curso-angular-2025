@@ -1,27 +1,24 @@
-# CursoAngular2025
+# Juego Cachipún Rick and Morty
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+Clásico juego del `Cachipún` con personajes de la serie Rick and Morty.
 
-## Development server
+## Desarrollo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Desarrollado por Rodrigo Ossa Villalobos.
 
-## Code scaffolding
+## Production
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Puede probar el juego en el siguiente link [Jugar Cachipún](https://rick-morty-juego.vercel.app/).
 
-## Build
+## Versiones
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular **15.2.11**
+- Node **20.14.0**
+- API: `https://rickandmortyapi.com/api`
+- Versión juego: **0.1.10**
 
-## Running unit tests
+## Capturas de pantalla
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Screenshot de inicio de juego](/assets/gameplay/inicio-gameplay.jpg "Captura de pantalla juego - Inicio juego")
+![Screenshot de selección de personaje](/assets/gameplay/select-character.jpg "Captura de pantalla juego - Selección de personajes")
+![Screenshot de ganador del juego](/assets/gameplay/winner-screen.jpg "Captura de pantalla juego - Ganador del juego")

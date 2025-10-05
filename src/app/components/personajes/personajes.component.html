@@ -1,20 +1,29 @@
 <div class="column">
   <h2 style="color: white;">Lista de personajes</h2>
-  <div class="grid">
-    <div class="card" *ngFor="let p of characters" tabindex="0" role="button" [ngClass]="{
+
+  <!-- vista de jugadores -->
+  <div class="grid" *ngIf="!cargandoJugadores; else loading" [class.disabled-selection]="selectPlayerOne && selectPlayerTwo">
+    <div class="card" *ngFor="let p of characters" [ngClass]="{
       'selected-player-one': p === selectPlayerOne && p !== selectPlayerTwo,
       'selected-player-two': p === selectPlayerTwo && p !== selectPlayerOne,
       'selected-both': p === selectPlayerOne && p === selectPlayerTwo
     }">
-      <div class="avatar" (click)="seleccionarPersonaje(p)">
+      <div class="avatar" (click)="!isSelectionLocked() && seleccionarPersonaje(p)">
         <img [src]="p.image" alt="{{p.name}}" />
       </div>
       <div class="name">{{ p.name }}</div>
     </div>
   </div>
-  <h3 style="color: white;">Área combate</h3>
+
+  <!-- vista carga de jugadores API https://rickandmortyapi.com/api -->
+  <ng-template #loading>
+    <p style="color: white;">Cargando personajes...</p>
+  </ng-template> 
+
+  <h2 style="color: white;">Área combate</h2>
 
   <div class="versus-container">
+    <!-- vista jugador uno -->
     <ng-container *ngIf="selectPlayerOne">
       <div class="area-juego">
         <div class="player-container">
@@ -28,6 +37,7 @@
 
     <span class="vs-text">VS</span>
 
+    <!-- vista jugador dos -->
     <ng-container *ngIf="selectPlayerTwo">
       <div class="area-juego">
         <div class="player-container">
@@ -37,9 +47,9 @@
           <app-biografia-personaje [personaje]="selectPlayerTwo" [numeroJugador]="2" />
         </div>
       </div>
-
     </ng-container>
 
+    <!-- vista resultado cachipún -->
     <ng-container *ngIf="ganador.length > 0">
       <div class="winner-overlay">
         <div class="winner-content">
@@ -51,6 +61,7 @@
 
   </div>
 
+  <!-- footer juego -->
   <ng-container *ngIf="selectPlayerOne && selectPlayerTwo">
     <div class="footer-juego">
       <app-button-luchar [playerOne]="selectPlayerOne" [playerTwo]="selectPlayerTwo"
