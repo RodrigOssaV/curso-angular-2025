@@ -1,3 +1,8 @@
-<button (click)="buttonFight()">
-  Luchar
-</button>
+<app-custom-button class="primary" (click)="buttonFight()" [disabled]="jugadoresJugando">
+  <div *ngIf="jugadoresJugando; else Loading">
+    <div class="spinner"></div>
+  </div>
+  <ng-template #Loading>
+    Cachipún!
+  </ng-template>
+</app-custom-button>

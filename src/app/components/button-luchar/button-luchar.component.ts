@@ -13,6 +13,8 @@ export class ButtonLucharComponent implements OnInit {
   @Input() resetCompletoJuego!: () => void;
   @Output() ganadorJuego = new EventEmitter<ResultadoJuego>();
 
+  jugadoresJugando: boolean = false;
+
   private jugadas: Jugada[] = [
     { id: 1, jugada: 'piedra' },
     { id: 2, jugada: 'papel' },
@@ -24,7 +26,7 @@ export class ButtonLucharComponent implements OnInit {
   ngOnInit(): void {}
 
   buttonFight() {
-    console.log('click');
+    this.jugadoresJugando = true;
     this.resetCompletoJuego();
     setTimeout(() => {
       const jugadaJugadorUno = this.comienzaJugada();
@@ -39,6 +41,7 @@ export class ButtonLucharComponent implements OnInit {
         jugada_playerTwo: jugadaJugadorDos,
       };
       this.ganadorJuego.emit(data_juego);
+      this.jugadoresJugando = false;
     }, 1000);
   }
 
