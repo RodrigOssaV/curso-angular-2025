@@ -1,51 +1,98 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Character } from '@app/models/character';
+import { Jugada, ResultadoJuego } from '@app/models/jugada';
 import { RickAndMortyService } from '@app/services/rick-and-morty.service';
 
 @Component({
   selector: 'app-personajes',
   templateUrl: './personajes.component.html',
-  styleUrls: ['./personajes.component.css']
+  styleUrls: ['./personajes.component.css'],
 })
 export class PersonajesComponent implements OnInit {
-
   characters: Character[] = [];
   personajeSeleccionado?: Character;
 
-  constructor(
-    private router: Router,
-    private rickAndMortyService: RickAndMortyService,
-  ){}
+  // players
+  selectPlayerOne!: Character;
+  selectPlayerTwo!: Character;
+
+  // plays
+  jugadaJugarUno!: Jugada;
+  jugadaJugarDos!: Jugada;
+
+  // thinkings
+  jugadorUnoPensando: boolean = true;
+  jugadorDosPensando: boolean = true;
+
+  // winner
+  ganador: ResultadoJuego[] = [];
+  numeroJugadorGanador: number = 0;
+
+  constructor(private rickAndMortyService: RickAndMortyService) {}
 
   ngOnInit(): void {
     this.rickAndMortyService.getCharacters().subscribe({
       next: (data) => {
-        this.characters = data.map(c => ({...c, mostrar: false}));
+        this.characters = data.map((c) => ({ ...c, mostrar: false }));
       },
       error: (error) => console.error(error),
     });
   }
 
-  irAlPersonaje(id: number){
-    this.router.navigate(["/personaje", id]);
-  }
-
-  seleccionarPersonaje(personaje: Character){
-    this.personajeSeleccionado = personaje;
-  }
-
-  onMarcadoFavorito(p: Character){
-    let personaje = this.characters.find(c => c.id === p.id);
-    if ( personaje && !personaje.name.includes('⭐')){
-      personaje.name = '⭐' + personaje.name + '⭐';
+  seleccionarPersonaje(personaje: Character) {
+    if (this.selectPlayerOne !== undefined) {
+      this.selectPlayerTwo = personaje;
+      this.jugadorUnoPensando = true;
+      this.jugadorDosPensando = true;
+      return;
     }
+    this.selectPlayerOne = personaje;
   }
 
-  onDesmarcadoFavorito(p: Character){
-    let personaje = this.characters.find(c => c.id === p.id);
-    if (personaje){
-      personaje.name = personaje.name.replace(/⭐/g, "");
+  handleGanador(resultado: ResultadoJuego) {
+    this.ganador = [];
+    this.jugadaJugarUno = resultado.jugada_playerOne;
+    this.jugadaJugarDos = resultado.jugada_playerTwo;
+    this.jugadorUnoPensando = false;
+    this.jugadorDosPensando = false;
+
+    this.ganador.push(resultado);
+    this.getNumeroJugadorGanador(resultado.ganador);
+  }
+
+  resetJuego() {
+    this.jugadorUnoPensando = true;
+    this.jugadorDosPensando = true;
+    this.selectPlayerOne = undefined!;
+    this.selectPlayerTwo = undefined!;
+    this.jugadaJugarUno = undefined!;
+    this.jugadaJugarDos = undefined!;
+    this.ganador = [];
+  }
+
+  resetJuegoPensando() {
+    this.jugadorUnoPensando = true;
+    this.jugadorDosPensando = true;
+    this.jugadaJugarUno = undefined!;
+    this.jugadaJugarDos = undefined!;
+    this.ganador = [];
+  }
+
+  getNumeroJugadorGanador(ganador: Character | string){
+    if(typeof ganador === 'string') {
+      this.numeroJugadorGanador = 0; // empate
+      return
+    } 
+
+    if(typeof ganador === 'object'){
+      const { name: name_ganador } = ganador;
+      const { name: name_playerOne } = this.selectPlayerOne;
+
+      if (name_ganador === name_playerOne) {
+        this.numeroJugadorGanador = 1; // gana jugador uno
+      } else {
+        this.numeroJugadorGanador = 2; // gana jugador dos
+      }
     }
   }
 }

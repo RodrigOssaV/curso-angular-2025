@@ -10,20 +10,20 @@ import { Character } from '@app/models/character';
 export class CardPersonajeComponent {
 
   @Input() personaje?: Character;
-  @Output() favorito = new EventEmitter<Character>();
-  @Output() noFavorito = new EventEmitter<Character>();
+  // @Output() favorito = new EventEmitter<Character>();
+  // @Output() noFavorito = new EventEmitter<Character>();
 
   constructor(private router: Router){}
 
   marcarComoFavorito(){
     if (this.personaje){
-      this.favorito?.emit(this.personaje);
+      // this.favorito?.emit(this.personaje);
     }
   }
 
   desmarcarFavorito(){
     if(this.personaje){
-      this.noFavorito?.emit(this.personaje);
+      // this.noFavorito?.emit(this.personaje);
     }
   }
 

@@ -9,6 +9,12 @@ import { FormsModule } from '@angular/forms';
 import { CardPersonajeComponent } from './components/card-personaje/card-personaje.component';
 import { PersonajeComponent } from './components/personaje/personaje.component';
 import { OrigenesComponent } from './components/origenes/origenes.component';
+import { ButtonLucharComponent } from './components/button-luchar/button-luchar.component';
+import { ThoughtBubbleComponent } from './components/thought-bubble/thought-bubble.component';
+import { ResultadoJuegoComponent } from './components/resultado-juego/resultado-juego.component';
+import { ButtonResetComponent } from './components/button-reset/button-reset.component';
+import { CustomButtonComponent } from './components/custom-button/custom-button.component';
+import { BiografiaPersonajeComponent } from './components/biografia-personaje/biografia-personaje.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,13 @@ import { OrigenesComponent } from './components/origenes/origenes.component';
     PersonajesComponent,
     CardPersonajeComponent,
     PersonajeComponent,
-    OrigenesComponent
+    OrigenesComponent,
+    ButtonLucharComponent,
+    ThoughtBubbleComponent,
+    ResultadoJuegoComponent,
+    ButtonResetComponent,
+    CustomButtonComponent,
+    BiografiaPersonajeComponent
   ],
   imports: [
     BrowserModule,

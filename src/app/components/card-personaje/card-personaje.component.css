@@ -1,0 +1,11 @@
+.personaje-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin: auto;
+}
+
+.personaje-card img{
+  border-radius: 20px;
+}

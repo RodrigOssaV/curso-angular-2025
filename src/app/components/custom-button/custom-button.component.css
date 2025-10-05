@@ -1,0 +1,27 @@
+button {
+  padding: 12px 24px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+:host(.primary) button {
+  background-color: purple;
+  color: white;
+}
+
+:host(.secondary) button {
+  background-color: #6c757d;
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

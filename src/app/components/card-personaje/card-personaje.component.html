@@ -1,8 +1,4 @@
-<div *ngIf="personaje" class="personaje-car">
-  <div>
-    <button (click)="marcarComoFavorito()">Marcar como favorito</button>
-    <button (click)="desmarcarFavorito()">Desmarcar favorito</button>
-  </div>
-  <img [src]="personaje.image" />
-  <button (click)="irAlPersonaje(personaje.id)">Ir al personaje</button>
+<div *ngIf="personaje" class="personaje-card">
+  <img [src]="personaje.image" height="200" width="200" />
+  <!-- <p>{{personaje.name}}</p> -->
 </div>

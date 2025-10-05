@@ -17,6 +17,12 @@ export interface Character {
   image: string;
   mostrar: boolean;
   episode: string[];
+  location: Location;
+}
+
+export interface Location {
+  name: string;
+  url: string;
 }
 
 export interface Origin {

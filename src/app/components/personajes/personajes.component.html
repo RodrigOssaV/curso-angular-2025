@@ -1,26 +1,61 @@
 <div class="column">
-  <h2>Lista de personajes</h2>
-  <ul>
-    <li *ngFor="let p of characters; let par = even" (click)="seleccionarPersonaje(p)">
-      <ng-container *ngIf="par; else Impar">
-        <p style="color: red">
-          ID: {{ p.id }} - Nombre: {{ p.name }} – Origen: {{ p.origin.name }} - {{ p.mostrar }} - {{ p.episode.length }}
-          <input [(ngModel)]="p.name">
-        </p>
-      </ng-container>
+  <h2 style="color: white;">Lista de personajes</h2>
+  <div class="grid">
+    <div class="card" *ngFor="let p of characters" tabindex="0" role="button" [ngClass]="{
+      'selected-player-one': p === selectPlayerOne && p !== selectPlayerTwo,
+      'selected-player-two': p === selectPlayerTwo && p !== selectPlayerOne,
+      'selected-both': p === selectPlayerOne && p === selectPlayerTwo
+    }">
+      <div class="avatar" (click)="seleccionarPersonaje(p)">
+        <img [src]="p.image" alt="{{p.name}}" />
+      </div>
+      <div class="name">{{ p.name }}</div>
+    </div>
+  </div>
+  <h3 style="color: white;">Área combate</h3>
 
-      <ng-template #Impar>
-        <p style="color: grey">
-          ID: {{ p.id }} - Nombre: {{ p.name }} – Origen: {{ p.origin.name }} - {{ p.mostrar }} - {{ p.episode.length }}
-        </p>
-      </ng-template>
-    </li>
-  </ul>
-  <h3>Personaje</h3>
-  <ng-container *ngIf="personajeSeleccionado">
-    <app-card-personaje 
-    [personaje]="personajeSeleccionado"
-    (favorito)="onMarcadoFavorito($event)"
-    (noFavorito)="onDesmarcadoFavorito($event)" />
+  <div class="versus-container">
+    <ng-container *ngIf="selectPlayerOne">
+      <div class="area-juego">
+        <div class="player-container">
+          <app-card-personaje [personaje]="selectPlayerOne" />
+        </div>
+        <div>
+          <app-biografia-personaje [personaje]="selectPlayerOne" [numeroJugador]="1" />
+        </div>
+      </div>
+    </ng-container>
+
+    <span class="vs-text">VS</span>
+
+    <ng-container *ngIf="selectPlayerTwo">
+      <div class="area-juego">
+        <div class="player-container">
+          <app-card-personaje [personaje]="selectPlayerTwo" />
+        </div>
+        <div>
+          <app-biografia-personaje [personaje]="selectPlayerTwo" [numeroJugador]="2" />
+        </div>
+      </div>
+
+    </ng-container>
+
+    <ng-container *ngIf="ganador.length > 0">
+      <div class="winner-overlay">
+        <div class="winner-content">
+          <h2>¡Resultado!</h2>
+          <app-resultado-juego [ganador]="ganador" [numeroGanador]="numeroJugadorGanador" />
+        </div>
+      </div>
+    </ng-container>
+
+  </div>
+
+  <ng-container *ngIf="selectPlayerOne && selectPlayerTwo">
+    <div class="footer-juego">
+      <app-button-luchar [playerOne]="selectPlayerOne" [playerTwo]="selectPlayerTwo"
+        (ganadorJuego)="handleGanador($event)" [resetCompletoJuego]="resetJuegoPensando.bind(this)" />
+      <app-button-reset (onReset)="resetJuego()" />
+    </div>
   </ng-container>
 </div>
