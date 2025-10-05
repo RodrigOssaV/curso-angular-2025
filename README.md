@@ -19,6 +19,6 @@ Puede probar el juego en el siguiente link [Jugar Cachipún](https://rick-morty-
 
 ## Capturas de pantalla
 
-![Screenshot de inicio de juego](https://i.postimg.cc/XYZ12345/inicio-gameplay.jpg "Captura de pantalla juego - Inicio juego")
-![Screenshot de selección de personaje](/assets/gameplay/select-character.jpg "Captura de pantalla juego - Selección de personajes")
-![Screenshot de ganador del juego](/assets/gameplay/winner-screen.jpg "Captura de pantalla juego - Ganador del juego")
+![Screenshot de inicio de juego](./assets/gameplay/inicio-gameplay.jpg "Captura de pantalla juego - Inicio juego")
+![Screenshot de selección de personaje](./assets/gameplay/select-character.jpg "Captura de pantalla juego - Selección de personajes")
+![Screenshot de ganador del juego](./assets/gameplay/winner-screen.jpg "Captura de pantalla juego - Ganador del juego")
