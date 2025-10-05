@@ -1,0 +1,20 @@
+<div class="personaje-info">
+  <h2 [ngClass]="{
+        'selected-player-one': numeroJugador === 1,
+        'selected-player-two': numeroJugador === 2,
+      }">{{ personaje?.name }}
+    (P{{numeroJugador}})
+  </h2>
+  <p><strong>Status</strong> {{ personaje?.status }}</p>
+  <p><strong>Especie</strong> {{ personaje?.species }}</p>
+  <p><strong>Género</strong> {{ personaje?.gender }}</p>
+  <p><strong>Origen</strong> {{ personaje?.origin?.name }}</p>
+  <p><strong>Ubicación:</strong> {{ personaje?.location?.name }}</p>
+
+  <p>
+    <strong>Episodios: </strong>
+    <span>{{ personaje?.episode?.length }}</span>
+  </p>
+
+  <!-- <a [href]="personaje.url" target="_blank" class="btn-ver-mas">Ver más</a> -->
+</div>
