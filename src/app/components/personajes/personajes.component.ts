@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Character } from '@app/models/character';
-import { Ganador } from '@app/models/ganador';
 import { Jugada, ResultadoJuego } from '@app/models/jugada';
 import { RickAndMortyService } from '@app/services/rick-and-morty.service';
 
@@ -50,18 +49,14 @@ export class PersonajesComponent implements OnInit {
   }
 
   handleGanador(resultado: ResultadoJuego) {
-    // console.log('Resultado del juego:', resultado);
-    console.log('init ganador: ', this.ganador);
     this.ganador = [];
     this.jugadaJugarUno = resultado.jugada_playerOne;
     this.jugadaJugarDos = resultado.jugada_playerTwo;
     this.jugadorUnoPensando = false;
     this.jugadorDosPensando = false;
 
-    console.log(resultado);
     this.ganador.push(resultado);
     console.log(this.ganador);
-    // this.ganador.ganador.valueOf();
   }
 
   resetJuego() {

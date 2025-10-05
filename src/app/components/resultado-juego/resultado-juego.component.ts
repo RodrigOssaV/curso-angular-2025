@@ -13,11 +13,11 @@ export class ResultadoJuegoComponent {
   iconPlay = [
     {
       name: 'tijera',
-      icon: '✌️',
+      icon: '✂',
     },
     {
       name: 'piedra',
-      icon: '✊',
+      icon: '🪨',
     },
     {
       name: 'papel',

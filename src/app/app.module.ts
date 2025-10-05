@@ -12,6 +12,9 @@ import { OrigenesComponent } from './components/origenes/origenes.component';
 import { ButtonLucharComponent } from './components/button-luchar/button-luchar.component';
 import { ThoughtBubbleComponent } from './components/thought-bubble/thought-bubble.component';
 import { ResultadoJuegoComponent } from './components/resultado-juego/resultado-juego.component';
+import { ButtonResetComponent } from './components/button-reset/button-reset.component';
+import { CustomButtonComponent } from './components/custom-button/custom-button.component';
+import { BiografiaPersonajeComponent } from './components/biografia-personaje/biografia-personaje.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { ResultadoJuegoComponent } from './components/resultado-juego/resultado-
     OrigenesComponent,
     ButtonLucharComponent,
     ThoughtBubbleComponent,
-    ResultadoJuegoComponent
+    ResultadoJuegoComponent,
+    ButtonResetComponent,
+    CustomButtonComponent,
+    BiografiaPersonajeComponent
   ],
   imports: [
     BrowserModule,
