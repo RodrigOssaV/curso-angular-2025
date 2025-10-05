@@ -6,7 +6,7 @@
 
 ## 🚀 Demo en producción
 
-👉 [**Jugar Cachipún**](https://rick-morty-juego.vercel.app/)  
+👉 [**Jugar Cachipún**](https://rick-morty-juego.vercel.app/){:target="_blank" rel="noopener noreferrer"}
 *(Disponible online en Vercel)*
 
 ---
