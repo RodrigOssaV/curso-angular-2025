@@ -19,6 +19,7 @@ import { NoEncontradoComponent } from './components/no-encontrado/no-encontrado.
 import { WeatherPageComponent } from './components/weather-page/weather-page.component';
 import { IconoClimaComponent } from './components/icono-clima/icono-clima.component';
 import { SeparatorComponent } from './components/separator/separator.component';
+import { WeatherBackgroundComponent } from './components/weather-background/weather-background.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SeparatorComponent } from './components/separator/separator.component';
     NoEncontradoComponent,
     WeatherPageComponent,
     IconoClimaComponent,
-    SeparatorComponent
+    SeparatorComponent,
+    WeatherBackgroundComponent
   ],
   imports: [
     BrowserModule,

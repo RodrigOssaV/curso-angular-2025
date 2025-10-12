@@ -1,21 +1,24 @@
-<main class="main-container">
+<main>
   <section class="section">
 
     <div class="weather-left">
+      <app-weather-background [weather]="weatherData!" />
       <div class="weather-info">
         <div class="temperature">
           {{weatherData?.main?.temp | number:'1.0-0'}}°
         </div>
         <div class="location">
           <h2>{{weatherData?.name}}, {{weatherData?.sys?.country}}</h2>
+          <!-- TODO change format date HH:MM - string day, number day month ´YY -->
           <p>06:09 - Sunday, 6 Oct '19</p>
         </div>
         <div class="status">
           <app-icono-clima [weather]="weatherData!" />
-          <span>Rainy</span>
+          <span>{{main}}</span>
         </div>
       </div>
     </div>
+    
 
     <div class="weather-right">
       

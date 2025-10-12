@@ -8,46 +8,52 @@ import { WeatherService } from '@app/services/weather.service';
   styleUrls: ['./weather-page.component.css'],
 })
 export class WeatherPageComponent implements OnInit {
-
   weatherData?: WeatherResponse;
   weatherDataList: WeatherResponse[] = [];
-  
+
   date!: string;
+  main!: string;
   location: string = '';
 
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
     this.date = this.getLocalDate();
-    this.weatherService.getWeather()
-      .subscribe({
-        next: (data) => {
-          this.weatherData = data;
-          this.weatherDataList.push(data);
-        },
-        error: (error) => {
-          console.log(error);
-        },
-      });
+    this.weatherService.getWeather().subscribe({
+      next: (data) => {
+        // console.log(data);
+        this.weatherData = data;
+        this.weatherDataList.push(data);
+        this.main = data.weather[0].main;
+        // console.log(this.main);
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 
   searchWeatherLocation() {
-    this.weatherService.getLocalWeather(this.location)
-      .subscribe({
-        next: response => {
-          this.weatherData = response;
+    this.weatherService.getLocalWeather(this.location).subscribe({
+      next: (response) => {
+        this.weatherData = response;
+        this.main = response.weather[0].main;
+        // console.log(this.main);
 
-          if(!this.weatherDataList?.some(we => we.name === response.name)){
-            this.weatherDataList.push(response);
+        if (!this.weatherDataList?.some((we) => we.name === response.name)) {
+          if (this.weatherDataList.length >= 15) {
+            this.weatherDataList.shift();
           }
+          this.weatherDataList.push(response);
+        }
 
-          console.log(this.weatherDataList);
-          this.location = '';
-        },
-        error: (error) => {
-          console.log(error);
-        },
-      });
+        console.log(this.weatherDataList);
+        this.location = '';
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 
   getLocalDate() {
@@ -63,7 +69,7 @@ export class WeatherPageComponent implements OnInit {
 
     const formatted = date
       .toLocaleString('es-CL', options)
-      .replace(',', '') 
+      .replace(',', '')
       .replace(' ', ' ');
 
     return formatted;

@@ -9,7 +9,7 @@ import { WeatherResponse } from '@app/models/weather';
 export class IconoClimaComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() weather!: WeatherResponse;
 
-  main!: string;
+  icon!: string;
 
   ngOnInit(): void {
     // console.log(this.weather?.weather);
@@ -19,7 +19,7 @@ export class IconoClimaComponent implements OnInit, OnChanges, AfterViewInit {
     // console.log(this.weather?.weather);
     if (this.weather) {
       this.weather.weather.map((item) => {
-        this.main = item.icon;
+        this.icon = item.icon;
       });
     }
   }
