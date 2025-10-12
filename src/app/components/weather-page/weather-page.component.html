@@ -1,9 +1,9 @@
 <main>
   <section class="section">
 
+    <app-weather-background [weather]="weatherData!" />
+    
     <div class="weather-left">
-      <app-weather-background [weather]="weatherData!" />
-      
       <div class="weather-info">
         <div class="temperature">
           {{weatherData?.main?.temp | number:'1.0-0'}}°
@@ -22,14 +22,19 @@
     <div class="weather-right">
       <!-- searching & button to search -->
       <div class="search-bar">
-        <input [(ngModel)]="location" type="string" placeholder="Search your location..." />
-        <button (click)="searchWeatherLocation()">Search</button>
+        <div class="content-input">
+          <input [(ngModel)]="location" type="string" placeholder="Search your location..." />
+          <!-- <button (click)="searchWeatherLocation()">Search</button> -->
+        </div>
+        <div class="button-search" (click)="searchWeatherLocation('input')">
+          <img loading="lazy" src="/assets/weather/search.png" />
+        </div>
       </div>
 
       <!-- weather location search -->
       <div class="locations">
         <h3>Lastest locations</h3>
-        <p *ngFor="let location of weatherDataList.slice().reverse(); let i = index">
+        <p *ngFor="let location of weatherDataList.slice().reverse(); let i = index" (click)="searchWeatherLocation('location', location.name)">
           {{location.name}}
         </p>
       </div>

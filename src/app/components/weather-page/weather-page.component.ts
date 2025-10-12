@@ -29,7 +29,12 @@ export class WeatherPageComponent implements OnInit {
     });
   }
 
-  searchWeatherLocation() {
+  searchWeatherLocation(option: 'input' | 'location', location?: string) {
+    if(option === 'location'){
+      // console.log('come to lastest locations');
+      this.location = location!;
+    }
+
     this.weatherService.getLocalWeather(this.location).subscribe({
       next: (response) => {
         this.weatherData = response;
