@@ -20,6 +20,8 @@ import { WeatherPageComponent } from './components/weather-page/weather-page.com
 import { IconoClimaComponent } from './components/icono-clima/icono-clima.component';
 import { SeparatorComponent } from './components/separator/separator.component';
 import { WeatherBackgroundComponent } from './components/weather-background/weather-background.component';
+import { WeatherDetailComponent } from './components/weather-detail/weather-detail.component';
+import { WeatherDatetimeComponent } from './components/weather-datetime/weather-datetime.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { WeatherBackgroundComponent } from './components/weather-background/weat
     WeatherPageComponent,
     IconoClimaComponent,
     SeparatorComponent,
-    WeatherBackgroundComponent
+    WeatherBackgroundComponent,
+    WeatherDetailComponent,
+    WeatherDatetimeComponent
   ],
   imports: [
     BrowserModule,
