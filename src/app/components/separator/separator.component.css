@@ -1,0 +1,8 @@
+.separator {
+  border: none;
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 1rem;
+  align-items: center;
+  justify-content: center;
+}
