@@ -4,6 +4,7 @@
     <app-weather-background [weather]="weatherData!" />
     
     <div class="weather-left">
+      <p>City Weather Now</p>
       <div class="weather-info">
         <div class="temperature">
           {{weatherData?.main?.temp | number:'1.0-0'}}°

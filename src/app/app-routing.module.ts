@@ -7,9 +7,9 @@ import { WeatherPageComponent } from './components/weather-page/weather-page.com
 // import { OrigenesComponent } from './components/origenes/origenes.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'local-weather', pathMatch: 'full' },
-  // { path: 'arena-juego', component: PersonajesComponent },
-  { path: 'local-weather', component: WeatherPageComponent },
+  { path: '', redirectTo: 'city-weather-now', pathMatch: 'full' },
+  { path: 'arena-juego', component: PersonajesComponent },
+  { path: 'city-weather-now', component: WeatherPageComponent },
   { path: '**', component: NoEncontradoComponent },
   // { path: 'personaje', component: PersonajeComponent },
   // { path: 'personaje/:id', component: PersonajeComponent },

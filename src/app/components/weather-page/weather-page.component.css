@@ -12,16 +12,23 @@
 
 .weather-left {
   flex: 1;
-  position: relative; /* referencia para el fondo absoluto */
+  position: relative;
   display: flex;
-  align-items: flex-end; /* opcional: para alinear info al final */
+  flex-direction: column;
+  justify-content: space-between;
   padding: 4rem;
   overflow: hidden;
 }
 
+.weather-left p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
 .weather-info {
   position: relative;
-  z-index: 1; /* asegura que quede encima del fondo */
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -78,7 +85,7 @@
 
 .search-bar {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
