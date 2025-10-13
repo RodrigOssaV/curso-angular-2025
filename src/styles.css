@@ -1,4 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* rick-morty-game stone-scissors-papel */
+/* body {
+  background: #0b1020; 
+} */
+
+/* weather page */
 body {
-  background: #0b1020;
+  background: #0e0e0e;
+  color: white;
+  font-family: 'Manrope', sans-serif;
 }

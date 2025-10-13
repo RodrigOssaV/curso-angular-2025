@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PersonajesComponent } from './components/personajes/personajes.component';
 import { NoEncontradoComponent } from './components/no-encontrado/no-encontrado.component';
+import { WeatherPageComponent } from './components/weather-page/weather-page.component';
 // import { PersonajeComponent } from './components/personaje/personaje.component';
 // import { OrigenesComponent } from './components/origenes/origenes.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'arena-juego', pathMatch: 'full' },
+  { path: '', redirectTo: 'city-weather-now', pathMatch: 'full' },
   { path: 'arena-juego', component: PersonajesComponent },
+  { path: 'city-weather-now', component: WeatherPageComponent },
   { path: '**', component: NoEncontradoComponent },
   // { path: 'personaje', component: PersonajeComponent },
   // { path: 'personaje/:id', component: PersonajeComponent },

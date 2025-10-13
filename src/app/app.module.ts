@@ -16,6 +16,12 @@ import { ButtonResetComponent } from './components/button-reset/button-reset.com
 import { CustomButtonComponent } from './components/custom-button/custom-button.component';
 import { BiografiaPersonajeComponent } from './components/biografia-personaje/biografia-personaje.component';
 import { NoEncontradoComponent } from './components/no-encontrado/no-encontrado.component';
+import { WeatherPageComponent } from './components/weather-page/weather-page.component';
+import { IconoClimaComponent } from './components/icono-clima/icono-clima.component';
+import { SeparatorComponent } from './components/separator/separator.component';
+import { WeatherBackgroundComponent } from './components/weather-background/weather-background.component';
+import { WeatherDetailComponent } from './components/weather-detail/weather-detail.component';
+import { WeatherDatetimeComponent } from './components/weather-datetime/weather-datetime.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,13 @@ import { NoEncontradoComponent } from './components/no-encontrado/no-encontrado.
     ButtonResetComponent,
     CustomButtonComponent,
     BiografiaPersonajeComponent,
-    NoEncontradoComponent
+    NoEncontradoComponent,
+    WeatherPageComponent,
+    IconoClimaComponent,
+    SeparatorComponent,
+    WeatherBackgroundComponent,
+    WeatherDetailComponent,
+    WeatherDatetimeComponent
   ],
   imports: [
     BrowserModule,
