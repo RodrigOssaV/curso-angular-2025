@@ -50,9 +50,14 @@
 
 .locations p {
   font-size: 0.9rem;
-  /* opacity: 0.8; */
+  opacity: 0.8;
   margin: 0.3rem 0 0 0;
   cursor: pointer;
+  transition: color 0.3s;
+}
+
+.locations p:hover {
+  opacity: 1;
   transition: color 0.3s;
 }
 
@@ -168,5 +173,13 @@
 
 .detail span:last-child {
   color: #fff;
+  font-weight: 500;
+}
+
+.city-not-found {
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+  margin-bottom: 1rem;
+  font-size: 1rem;
   font-weight: 500;
 }
