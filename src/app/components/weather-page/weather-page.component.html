@@ -21,13 +21,15 @@
     </div>
 
     <div class="weather-right">
+      
+      <p *ngIf="error" class="city-not-found">**City not found ({{errorLocation}})</p>
       <!-- searching & button to search -->
       <div class="search-bar">
         <div class="content-input">
           <input [(ngModel)]="location" type="string" placeholder="Search your location..." />
           <!-- <button (click)="searchWeatherLocation()">Search</button> -->
         </div>
-        <div class="button-search" (click)="searchWeatherLocation('input')">
+        <div class="button-search" (click)="searchWeatherLocation()">
           <img loading="lazy" src="/assets/weather/search.png" />
         </div>
       </div>
@@ -35,7 +37,7 @@
       <!-- weather location search -->
       <div class="locations">
         <h3>Lastest locations</h3>
-        <p *ngFor="let location of weatherDataList.slice().reverse(); let i = index" (click)="searchWeatherLocation('location', location.name)">
+        <p *ngFor="let location of weatherDataList.slice().reverse(); let i = index" (click)="searchWeatherLocationList(location.name)">
           {{location.name}}
         </p>
       </div>

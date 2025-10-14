@@ -13,6 +13,9 @@ export class WeatherPageComponent implements OnInit {
 
   main!: string;
   location: string = '';
+  errorLocation: string = '';
+
+  error: boolean = false;
 
   constructor(private weatherService: WeatherService) {}
 
@@ -29,11 +32,7 @@ export class WeatherPageComponent implements OnInit {
     });
   }
 
-  searchWeatherLocation(option: 'input' | 'location', location?: string) {
-    if(option === 'location'){
-      // console.log('come to lastest locations');
-      this.location = location!;
-    }
+  searchWeatherLocation() {
 
     this.weatherService.getLocalWeather(this.location).subscribe({
       next: (response) => {
@@ -49,6 +48,32 @@ export class WeatherPageComponent implements OnInit {
 
         console.log(this.weatherDataList);
         this.location = '';
+        this.error = false;
+      },
+      error: (error) => {
+        console.log(error);
+        this.error = true;
+        this.errorLocation = this.location;
+        this.location = '';
+      },
+    });
+  }
+
+  searchWeatherLocationList(location: string) {
+
+    this.weatherService.getLocalWeather(location).subscribe({
+      next: (response) => {
+        this.weatherData = response;
+        this.main = response.weather[0].main;
+
+        // if (!this.weatherDataList?.some((we) => we.name === response.name)) {
+        //   if (this.weatherDataList.length >= 10) {
+        //     this.weatherDataList.shift();
+        //   }
+        //   this.weatherDataList.push(response);
+        // }
+
+        console.log(this.weatherDataList);
       },
       error: (error) => {
         console.log(error);
