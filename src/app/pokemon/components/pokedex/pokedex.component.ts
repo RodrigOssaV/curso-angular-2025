@@ -29,8 +29,6 @@ export class PokedexComponent implements OnInit {
         forkJoin(request)
           .pipe()
           .subscribe(pokemon => {
-            // console.log(pokemon);
-            // this.pokemonList.set('pokemons', pokemon);
             this.pokemonList = pokemon
             console.log(this.pokemonList);
           })

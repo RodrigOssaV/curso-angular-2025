@@ -9,17 +9,7 @@
   <p class="pokemon-genus">{{genera?.genus}}</p>
   <p class="pokemon-description">{{selectedFlavorText?.flavor_text}}</p>
 
-  <h3 class="section-title">Measurements</h3>
-  <div class="measurements">
-    <div class="measurement-item">
-      <div class="measurement-value">{{pokeMonster?.weight | measurements: 'hg-to-kg'}}</div>
-      <div class="measurement-label">kg</div>
-    </div>
-    <div class="measurement-item">
-      <div class="measurement-value">{{pokeMonster?.height | measurements: 'dm-to-cm'}}</div>
-      <div class="measurement-label">cm</div>
-    </div>
-  </div>
+  <app-pokemon-measurements [pokeMeasurements]="pokeMonster" />
 
   <h3 class="section-title">Types</h3>
   <ul class="pokemon-list types-list">

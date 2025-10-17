@@ -1,17 +1,19 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { PokemonRoutingModule } from './pokemon-routing.module';
-import { PokedexComponent } from './components/pokedex/pokedex.component';
-import { PokeMonsterComponent } from './components/poke-monster/poke-monster.component';
 import { MeasurementsPipe } from "@app/pipes/measurements.pipe";
+import { PokeMonsterComponent } from '@pokecomponents/poke-monster/poke-monster.component';
+import { PokedexComponent } from '@pokecomponents/pokedex/pokedex.component';
+import { PokemonRoutingModule } from './pokemon-routing.module';
+import { MeasurementsComponent } from './components/measurements/measurements.component';
 
 
 @NgModule({
   declarations: [
     PokedexComponent,
     PokeMonsterComponent,
-    MeasurementsPipe
+    MeasurementsPipe,
+    MeasurementsComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { MeasurementsPipe } from "@app/pipes/measurements.pipe";
   ],
   exports: [
     PokedexComponent,
-    PokeMonsterComponent
+    PokeMonsterComponent,
+    MeasurementsComponent
   ]
 })
 export class PokemonModule { }
