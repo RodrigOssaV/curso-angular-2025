@@ -42,15 +42,16 @@ export class PokeMonsterComponent implements OnInit {
   getInfoPokemon(name: string) {
     this.pokemonService.getPokemon(name).subscribe({
       next: response => {
-        // console.log(response);
+        console.log('getPokemon: ', response);
         this.pokeMonster = response;
 
         this.pokemonService.getPokemonSpecies(this.pokeMonster.id)
           .subscribe(pk => {
-            // console.log(pk);
+            console.log('getPokemonSpecies: ', pk);
             this.genera = pk.genera[0];
             this.flavorTextEntries = pk.flavor_text_entries;
             this.selectedFlavorText = this.flavorTextEntries[0];
+            // console.log(this.selectedFlavorText);
           })
       },
       error: error => {

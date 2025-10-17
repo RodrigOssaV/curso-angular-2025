@@ -1,11 +1,9 @@
 <div class="pokedex-container">
   <!-- TODO loading controllers -->
   <div *ngFor="let pkm of pokemonList" class="pokemon-card">
-    <img 
-      class="pokemon-image"
+    <img class="pokemon-image"
       src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pkm.id}}.png"
-      [alt]="pkm.name"
-    />
+      [alt]="pkm.name" />
     <p class="pokemon-name" (click)="goToPokemon(pkm.name)">
       {{ pkm.name }}
     </p>

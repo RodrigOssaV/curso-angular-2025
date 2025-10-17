@@ -23,7 +23,7 @@ export class PokedexComponent implements OnInit {
 
     this.pokemonService.getAllPokemons().subscribe({
       next: response => {
-        // console.log(response);
+        // console.log('getAllPokemons: ', response);
         const request = response.results.map(r => this.pokemonService.getPokemon(r.name));
 
         forkJoin(request)

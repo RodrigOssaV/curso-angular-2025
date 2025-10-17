@@ -1,13 +1,5 @@
 <div class="pokemon-card">
-  <p class="pokemon-id"># {{pokeMonster?.id | zeros}}</p>
-  <img 
-    class="pokemon-image"
-    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokeMonster?.id}}.png"
-    alt="{{pokeMonster?.name}}"
-  />
-  <p class="pokemon-name">{{pokeMonster?.name}}</p>
-  <p class="pokemon-genus">{{genera?.genus}}</p>
-  <p class="pokemon-description">{{selectedFlavorText?.flavor_text}}</p>
+  <app-poke-card [pokeCard]="pokeMonster" [pokeCardGenera]="genera" [pokeCardFlavorText]="selectedFlavorText" />
 
   <app-pokemon-measurements [pokeMeasurements]="pokeMonster" />
 

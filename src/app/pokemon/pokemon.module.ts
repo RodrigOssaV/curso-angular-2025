@@ -10,6 +10,7 @@ import { PokeStatsComponent } from '@pokecomponents/poke-stats/poke-stats.compon
 import { PokeTypesComponent } from '@pokecomponents/poke-types/poke-types.component';
 import { PokedexComponent } from '@pokecomponents/pokedex/pokedex.component';
 import { PokemonRoutingModule } from './pokemon-routing.module';
+import { PokeCardComponent } from './components/poke-card/poke-card.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PokemonRoutingModule } from './pokemon-routing.module';
     PokeTypesComponent,
     PokeAbilitiesComponent,
     PokeStatsComponent,
+    PokeCardComponent,
   ],
   imports: [CommonModule, PokemonRoutingModule],
   exports: [
@@ -32,6 +34,7 @@ import { PokemonRoutingModule } from './pokemon-routing.module';
     PokeTypesComponent,
     PokeAbilitiesComponent,
     PokeStatsComponent,
+    PokeCardComponent,
   ],
 })
 export class PokemonModule {}
