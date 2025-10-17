@@ -16,7 +16,7 @@ export class PokeTypesComponent implements OnChanges{
     if(this.pokeTypes){
       // console.log(this.pokeTypes);
       this.types = this.pokeTypes.types;
-      console.log(this.types);
+      // console.log(this.types);
     }
   }
 }

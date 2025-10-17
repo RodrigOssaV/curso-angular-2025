@@ -1,0 +1,7 @@
+<h3 class="section-title">Stats</h3>
+<ul class="pokemon-list stats-list">
+  <li *ngFor="let stat of stats">
+    <span class="stat-name">{{stat.stat.name}}</span>
+    <span class="stat-value">{{stat.base_stat}}</span>
+  </li>
+</ul>

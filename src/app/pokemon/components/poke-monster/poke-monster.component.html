@@ -1,5 +1,5 @@
 <div class="pokemon-card">
-  <p class="pokemon-id">#{{pokeMonster?.id}}</p>
+  <p class="pokemon-id"># {{pokeMonster?.id | zeros}}</p>
   <img 
     class="pokemon-image"
     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokeMonster?.id}}.png"
@@ -13,21 +13,8 @@
 
   <app-poke-types [pokeTypes]="pokeMonster" />
 
-  <h3 class="section-title">Abilities</h3>
-  <ul class="pokemon-list abilities-list">
-    <li *ngFor="let ability of pokeMonster?.abilities">
-      {{ability.ability.name}} 
-      <span class="hidden-ability" *ngIf="ability.is_hidden">
-        (hidden ability)
-      </span>
-    </li>
-  </ul>
+  <app-poke-abilities [pokeAbilities]="pokeMonster" />
 
-  <h3 class="section-title">Stats</h3>
-  <ul class="pokemon-list stats-list">
-    <li *ngFor="let stat of pokeMonster?.stats">
-      <span class="stat-name">{{stat.stat.name}}</span>
-      <span class="stat-value">{{stat.base_stat}}</span>
-    </li>
-  </ul>
+  <app-poke-stats [pokeStats]="pokeMonster" />
+
 </div>

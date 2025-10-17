@@ -23,14 +23,14 @@ export class PokedexComponent implements OnInit {
 
     this.pokemonService.getAllPokemons().subscribe({
       next: response => {
-        console.log(response);
+        // console.log(response);
         const request = response.results.map(r => this.pokemonService.getPokemon(r.name));
 
         forkJoin(request)
           .pipe()
           .subscribe(pokemon => {
             this.pokemonList = pokemon
-            console.log(this.pokemonList);
+            // console.log(this.pokemonList);
           })
       },
       error: error => {
