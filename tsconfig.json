@@ -25,6 +25,7 @@
     ],
     "paths": {
       "@app/*": ["src/app/*"],
+      "@pokemon/*": ["src/app/pokemon/*"],
     }
   },
   "angularCompilerOptions": {

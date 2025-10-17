@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { WeatherResponse } from '@app/models/weather';
+import { environment } from "@app/environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherService {
 
-  private url = 'https://api.openweathermap.org/data/2.5/weather?q=';
-  private API_KEY = '7368caa1590332e768b72629db46f105';
+  private url = environment.openWeatherMapUrl;
+  private API_KEY = environment.openWeatherMapAPIKEY;
 
   constructor(private http: HttpClient) { }
 

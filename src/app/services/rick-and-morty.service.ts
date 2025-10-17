@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '@app/environments/environment';
 import {
   Character,
   CharacterResponse,
@@ -12,7 +13,7 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class RickAndMortyService {
-  private url = 'https://rickandmortyapi.com/api';
+  private url = environment.rickAndMortyMapUrl;
 
   constructor(private http: HttpClient) {}
 

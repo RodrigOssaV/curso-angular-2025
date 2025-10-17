@@ -1,19 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PersonajesComponent } from './components/personajes/personajes.component';
 import { NoEncontradoComponent } from './components/no-encontrado/no-encontrado.component';
-import { WeatherPageComponent } from './components/weather-page/weather-page.component';
-// import { PersonajeComponent } from './components/personaje/personaje.component';
-// import { OrigenesComponent } from './components/origenes/origenes.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'city-weather-now', pathMatch: 'full' },
-  { path: 'arena-juego', component: PersonajesComponent },
-  { path: 'city-weather-now', component: WeatherPageComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+  { path: 'weather', loadChildren: () => import('./weather/weather.module').then(m => m.WeatherModule) },
+  { path: 'battle-royale', loadChildren: () => import('./rps-game/rps-game.module').then(m => m.RpsGameModule) },
+  { path: 'pokemon', loadChildren: () => import('./pokemon/pokemon.module').then(m => m.PokemonModule) },
   { path: '**', component: NoEncontradoComponent },
-  // { path: 'personaje', component: PersonajeComponent },
-  // { path: 'personaje/:id', component: PersonajeComponent },
-  // { path: 'origenes', component: OrigenesComponent },
 ];
 
 @NgModule({

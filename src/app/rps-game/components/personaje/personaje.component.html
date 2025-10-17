@@ -6,7 +6,7 @@
 
   <h2>Unico personaje</h2>
   <div *ngIf="character; else NoCharacter">
-    <p> {{ character.id }} {{ character.name }} – Origen: {{ character.origin.name }} </p>
+    <p> {{ character?.id }} {{ character?.name }} – Origen: {{ character?.origin?.name }} </p>
     <h3>Lista episodios sin procesar</h3>
     <ul>
       <li class="procesar" *ngFor="let e of character.episode" #item

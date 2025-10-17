@@ -1,0 +1,48 @@
+<div class="pokemon-card">
+  <p class="pokemon-id">#{{pokeMonster?.id}}</p>
+  <img 
+    class="pokemon-image"
+    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokeMonster?.id}}.png"
+    alt="{{pokeMonster?.name}}"
+  />
+  <p class="pokemon-name">{{pokeMonster?.name}}</p>
+  <p class="pokemon-genus">{{genera?.genus}}</p>
+  <p class="pokemon-description">{{selectedFlavorText?.flavor_text}}</p>
+
+  <h3 class="section-title">Measurements</h3>
+  <div class="measurements">
+    <div class="measurement-item">
+      <div class="measurement-value">{{pokeMonster?.weight | measurements: 'hg-to-kg'}}</div>
+      <div class="measurement-label">kg</div>
+    </div>
+    <div class="measurement-item">
+      <div class="measurement-value">{{pokeMonster?.height | measurements: 'dm-to-cm'}}</div>
+      <div class="measurement-label">cm</div>
+    </div>
+  </div>
+
+  <h3 class="section-title">Types</h3>
+  <ul class="pokemon-list types-list">
+    <li *ngFor="let type of pokeMonster?.types">
+      {{type.type.name}}
+    </li>
+  </ul>
+
+  <h3 class="section-title">Abilities</h3>
+  <ul class="pokemon-list abilities-list">
+    <li *ngFor="let ability of pokeMonster?.abilities">
+      {{ability.ability.name}} 
+      <span class="hidden-ability" *ngIf="ability.is_hidden">
+        (hidden ability)
+      </span>
+    </li>
+  </ul>
+
+  <h3 class="section-title">Stats</h3>
+  <ul class="pokemon-list stats-list">
+    <li *ngFor="let stat of pokeMonster?.stats">
+      <span class="stat-name">{{stat.stat.name}}</span>
+      <span class="stat-value">{{stat.base_stat}}</span>
+    </li>
+  </ul>
+</div>
