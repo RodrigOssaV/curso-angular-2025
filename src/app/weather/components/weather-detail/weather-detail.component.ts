@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { WeatherResponse } from '@app/models/weather';
-import { defaultWeatherData, WeatherDefaultResponse } from '@app/models/weather-default';
+import { WeatherResponse } from '@weather/models/weather';
+import { defaultWeatherData, WeatherDefaultResponse } from '@weather/models/weather-default';
 
 @Component({
   selector: 'app-weather-detail',

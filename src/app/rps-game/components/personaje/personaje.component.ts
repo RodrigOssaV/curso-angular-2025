@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Character, Episode } from '@app/models/character';
-import { RickAndMortyService } from '@app/services/rick-and-morty.service';
+import { Character, Episode } from '@RPSGame/models/character';
+import { RickAndMortyService } from '@services/rick-and-morty.service';
 import { filter, map } from 'rxjs/operators';
 
 @Component({

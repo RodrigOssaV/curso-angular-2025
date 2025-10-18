@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Jugada } from '@app/models/jugada';
+import { Jugada } from '@RPSGame/models/jugada';
 
 @Component({
   selector: 'app-thought-bubble',

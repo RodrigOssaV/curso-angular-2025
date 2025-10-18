@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Character } from '@app/models/character';
-import { Jugada, ResultadoJuego } from '@app/models/jugada';
+import { Character } from '@RPSGame/models/character';
+import { Jugada, ResultadoJuego } from '@RPSGame/models/jugada';
 
 @Component({
   selector: 'app-button-luchar',

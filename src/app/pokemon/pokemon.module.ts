@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { SeparatorComponent } from '@app/components/separator/separator.component';
+import { SeparatorComponent } from '@components/separator/separator.component';
 import { MeasurementsPipe } from '@pipes/measurements.pipe';
 import { ZerosPipe } from '@pipes/zeros.pipe';
 import { EvolutionCardComponent } from '@pokecomponents/evolution-card/evolution-card.component';

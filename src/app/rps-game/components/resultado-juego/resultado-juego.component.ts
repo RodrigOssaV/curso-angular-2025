@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ResultadoJuego } from '@app/models/jugada';
+import { ResultadoJuego } from '@RPSGame/models/jugada';
 
 @Component({
   selector: 'app-resultado-juego',

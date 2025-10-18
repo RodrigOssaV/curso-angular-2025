@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WeatherPageComponent } from './components/weather-page/weather-page.component';
+import { WeatherPageComponent } from '@weathercomponents/weather-page/weather-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'city-weather-now', pathMatch: 'full' },

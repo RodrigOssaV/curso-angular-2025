@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from "@angular/platform-browser";
 import { ActivatedRoute } from '@angular/router';
-import { PokemonService } from '@app/services/pokemon.service';
+import { PokemonService } from '@services/pokemon.service';
 import { Chain } from '@pokemon/models/evolution-chain';
 import { Pokemon } from '@pokemon/models/pokemon';
 import { FlavorTextEntry, Genera } from '@pokemon/models/pokemon-species';

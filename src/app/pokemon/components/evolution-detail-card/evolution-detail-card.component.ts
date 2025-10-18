@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { Chain, EvolutionDetail } from '@app/pokemon/models/evolution-chain';
+import { Chain, EvolutionDetail } from '@pokemon/models/evolution-chain';
 
 @Component({
   selector: 'app-evolution-detail-card',

@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 import { WeatherRoutingModule } from './weather-routing.module';
 
-import { WeatherPageComponent } from './components/weather-page/weather-page.component';
-import { IconoClimaComponent } from './components/icono-clima/icono-clima.component';
-import { WeatherBackgroundComponent } from './components/weather-background/weather-background.component';
-import { WeatherDetailComponent } from './components/weather-detail/weather-detail.component';
-import { WeatherDatetimeComponent } from './components/weather-datetime/weather-datetime.component';
 import { FormsModule } from '@angular/forms';
+import { IconoClimaComponent } from '@weathercomponents/icono-clima/icono-clima.component';
+import { WeatherBackgroundComponent } from '@weathercomponents/weather-background/weather-background.component';
+import { WeatherDatetimeComponent } from '@weathercomponents/weather-datetime/weather-datetime.component';
+import { WeatherDetailComponent } from '@weathercomponents/weather-detail/weather-detail.component';
+import { WeatherPageComponent } from '@weathercomponents/weather-page/weather-page.component';
 
 
 @NgModule({

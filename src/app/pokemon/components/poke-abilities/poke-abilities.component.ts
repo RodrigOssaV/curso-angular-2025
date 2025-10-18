@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Ability, Pokemon } from '@app/pokemon/models/pokemon';
+import { Ability, Pokemon } from '@pokemon/models/pokemon';
 
 @Component({
   selector: 'app-poke-abilities',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Pokemon } from '@app/pokemon/models/pokemon';
-import { PokemonService } from '@app/services/pokemon.service';
+import { Pokemon } from '@pokemon/models/pokemon';
+import { PokemonService } from '@services/pokemon.service';
 import { forkJoin } from 'rxjs';
 
 @Component({

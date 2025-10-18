@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Chain, EvolutionDetail } from '@app/pokemon/models/evolution-chain';
+import { Chain, EvolutionDetail } from '@pokemon/models/evolution-chain';
 
 @Component({
   selector: 'app-evolution-detail-dual-card',

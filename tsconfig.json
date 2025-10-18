@@ -24,10 +24,17 @@
       "dom"
     ],
     "paths": {
-      "@app/*": ["src/app/*"],
+      // "@app/*": ["src/app/*"],
       "@pipes/*": ["src/app/pipes/*"],
+      "@services/*": ["src/app/services/*"],
+      "@environment/*": ["src/app/environments/*"],
+      "@components/*": ["src/app/components/*"],
       "@pokemon/*": ["src/app/pokemon/*"],
       "@pokecomponents/*": ["src/app/pokemon/components/*"],
+      "@weather/*": ["src/app/weather/*"],
+      "@weathercomponents/*": ["src/app/weather/components/*"],
+      "@RPSGame/*": ["src/app/rps-game/*"],
+      "@RPSGameComponents/*": ["src/app/rps-game/components/*"]
     }
   },
   "angularCompilerOptions": {

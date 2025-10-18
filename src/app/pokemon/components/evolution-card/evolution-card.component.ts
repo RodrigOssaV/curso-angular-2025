@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { Specie } from '@app/pokemon/models/evolution-chain';
+import { Specie } from '@pokemon/models/evolution-chain';
 
 @Component({
   selector: 'app-evolution-card',

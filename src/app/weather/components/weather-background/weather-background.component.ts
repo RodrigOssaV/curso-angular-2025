@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { WeatherResponse } from '@app/models/weather';
+import { WeatherResponse } from '@weather/models/weather';
 
 @Component({
   selector: 'app-weather-background',

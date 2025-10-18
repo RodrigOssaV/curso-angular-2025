@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Pokemon } from '@app/pokemon/models/pokemon';
-import { FlavorTextEntry, Genera } from '@app/pokemon/models/pokemon-species';
+import { Pokemon } from '@pokemon/models/pokemon';
+import { FlavorTextEntry, Genera } from '@pokemon/models/pokemon-species';
 
 @Component({
   selector: 'app-poke-card',

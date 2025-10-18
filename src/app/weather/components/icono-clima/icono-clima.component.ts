@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges, AfterViewInit } from '@angular/core';
-import { WeatherResponse } from '@app/models/weather';
+import { WeatherResponse } from '@weather/models/weather';
 
 @Component({
   selector: 'app-icono-clima',

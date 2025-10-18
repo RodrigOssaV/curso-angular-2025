@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Character } from '@app/models/character';
+import { Character } from '@RPSGame/models/character';
 
 @Component({
   selector: 'app-biografia-personaje',

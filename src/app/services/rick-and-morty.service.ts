@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '@app/environments/environment';
+import { environment } from '@environment/environment';
 import {
   Character,
   CharacterResponse,
   Episode,
   Origin,
-} from '@app/models/character';
+} from '@RPSGame/models/character';
 import { map, Observable } from 'rxjs';
 
 @Injectable({

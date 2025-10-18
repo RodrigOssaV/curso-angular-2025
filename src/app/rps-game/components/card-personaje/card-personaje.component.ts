@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { Character } from '@app/models/character';
+import { Character } from '@RPSGame/models/character';
 
 @Component({
   selector: 'app-card-personaje',
