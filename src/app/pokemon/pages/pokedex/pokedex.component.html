@@ -1,0 +1,6 @@
+<div class="pokedex-container">
+  <!-- TODO loading controllers -->
+  <div *ngFor="let generation of generationsList" class="generation-container" (click)="goToGeneration(generation.name)">
+    {{generation.name}} - {{generation.main_region.name}}
+  </div>
+</div>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@environment/environment';
-import { GenerationResponse } from '@pokemon/models/generation';
+import { GenerationResponse, GenerationsResponse } from '@pokemon/models/generation';
 import { EvolutionChainResponse } from '@pokemon/models/evolution-chain';
 import { Pokemon, PokemonResponse } from '@pokemon/models/pokemon';
 import { PokemonSpeciesResponse } from '@pokemon/models/pokemon-species';
@@ -45,8 +45,13 @@ export class PokemonService {
     return this.http.get<EvolutionChainResponse>(evolutionChainUrl);
   }
 
-  getGeneration(): Observable<GenerationResponse> {
+  getGenerations(): Observable<GenerationsResponse> {
     const generationUrl = `${this.url}/generation`;
-    return this.http.get<GenerationResponse>(generationUrl);
+    return this.http.get<GenerationsResponse>(generationUrl);
+  }
+
+  getGeneration(name: string): Observable<GenerationResponse> {
+    const generationsUrl = `${this.url}/generation/${name}`;
+    return this.http.get<GenerationResponse>(generationsUrl);
   }
 }

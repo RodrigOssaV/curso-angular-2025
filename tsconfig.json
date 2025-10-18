@@ -29,10 +29,14 @@
       "@services/*": ["src/app/services/*"],
       "@environment/*": ["src/app/environments/*"],
       "@components/*": ["src/app/components/*"],
+      /* pokemon path */
       "@pokemon/*": ["src/app/pokemon/*"],
+      "@pokepages/*": ["src/app/pokemon/pages/*"],
       "@pokecomponents/*": ["src/app/pokemon/components/*"],
+      /* weather path */
       "@weather/*": ["src/app/weather/*"],
       "@weathercomponents/*": ["src/app/weather/components/*"],
+      /* rock, papel & scissor battle royal path */
       "@RPSGame/*": ["src/app/rps-game/*"],
       "@RPSGameComponents/*": ["src/app/rps-game/components/*"]
     }

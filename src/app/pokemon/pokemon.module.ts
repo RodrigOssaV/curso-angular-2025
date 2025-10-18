@@ -12,11 +12,12 @@ import { PokeAbilitiesComponent } from '@pokecomponents/poke-abilities/poke-abil
 import { PokeCardComponent } from '@pokecomponents/poke-card/poke-card.component';
 import { PokeEvolutionsComponent } from "@pokecomponents/poke-evolutions/poke-evolutions.component";
 import { PokeImageEvolutionComponent } from "@pokecomponents/poke-image-evolution/poke-image-evolution.component";
-import { PokeMonsterComponent } from '@pokecomponents/poke-monster/poke-monster.component';
+import { PokeMonsterComponent } from '@pokemon/pages/poke-monster/poke-monster.component';
 import { PokeStatsComponent } from '@pokecomponents/poke-stats/poke-stats.component';
 import { PokeTypesComponent } from '@pokecomponents/poke-types/poke-types.component';
-import { PokedexComponent } from '@pokecomponents/pokedex/pokedex.component';
+import { PokedexComponent } from '@pokemon/pages/pokedex/pokedex.component';
 import { PokemonRoutingModule } from './pokemon-routing.module';
+import { GenerationDashboardComponent } from './pages/generation-dashboard/generation-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,8 @@ import { PokemonRoutingModule } from './pokemon-routing.module';
     EvolutionDetailDualCardComponent,
     //global-components
     SeparatorComponent,
+    //pages-components
+    GenerationDashboardComponent,
   ],
   imports: [CommonModule, PokemonRoutingModule],
   exports: [
@@ -54,6 +57,7 @@ import { PokemonRoutingModule } from './pokemon-routing.module';
     EvolutionDetailCardComponent,
     SeparatorComponent,
     EvolutionDetailDualCardComponent,
+    GenerationDashboardComponent,
   ],
 })
 export class PokemonModule {}

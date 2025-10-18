@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PokedexComponent } from '@pokecomponents/pokedex/pokedex.component';
-import { PokeMonsterComponent } from '@pokecomponents/poke-monster/poke-monster.component';
+import { PokeMonsterComponent } from '@pokemon/pages/poke-monster/poke-monster.component';
+import { PokedexComponent } from '@pokepages/pokedex/pokedex.component';
+import { GenerationDashboardComponent } from '@pokepages/generation-dashboard/generation-dashboard.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'labdex', pathMatch: 'full' },
-  { path: 'labdex', component: PokedexComponent, title: 'Where trainers begin - PokéLab' },
+  // main route http://localhost:4200/pokelab/
+  { path: '', redirectTo: 'index', pathMatch: 'full' },
+  { path: 'index', component: PokedexComponent, title: 'Where trainers begin - PokéLab' },
+  { path: 'generation/:name', component: GenerationDashboardComponent },
   { path: 'labdex/:name', component: PokeMonsterComponent },
 ];
 
