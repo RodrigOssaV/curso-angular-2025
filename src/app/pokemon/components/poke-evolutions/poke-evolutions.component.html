@@ -56,12 +56,8 @@
       </div>
     </ng-container>
   </ng-container>
-
-  <!-- Si no tiene evoluciones -->
-  <ng-container *ngIf="!chain?.evolves_to || chain!.evolves_to.length === 0">
-    <!-- TODO component not-evolution -->
-    <div class="evolution-stage">
-      <div class="no-evolution">This Pokémon doesn't evolve... for now.</div>
-    </div>
-  </ng-container>
 </div>
+<!-- Si no tiene evoluciones -->
+<ng-container *ngIf="!chain?.evolves_to || chain!.evolves_to.length === 0">
+  <app-no-evolution-card />
+</ng-container>

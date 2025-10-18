@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { LoadingPageComponent } from '@components/loading-page/loading-page.component';
 import { SeparatorComponent } from '@components/separator/separator.component';
 import { MeasurementsPipe } from '@pipes/measurements.pipe';
 import { ZerosPipe } from '@pipes/zeros.pipe';
@@ -8,17 +9,18 @@ import { EvolutionCardComponent } from '@pokecomponents/evolution-card/evolution
 import { EvolutionDetailCardComponent } from '@pokecomponents/evolution-detail-card/evolution-detail-card.component';
 import { EvolutionDetailDualCardComponent } from '@pokecomponents/evolution-detail-dual-card/evolution-detail-dual-card.component';
 import { MeasurementsComponent } from '@pokecomponents/measurements/measurements.component';
+import { NoEvolutionCardComponent } from '@pokecomponents/no-evolution-card/no-evolution-card.component';
 import { PokeAbilitiesComponent } from '@pokecomponents/poke-abilities/poke-abilities.component';
 import { PokeCardComponent } from '@pokecomponents/poke-card/poke-card.component';
 import { PokeEvolutionsComponent } from "@pokecomponents/poke-evolutions/poke-evolutions.component";
 import { PokeImageEvolutionComponent } from "@pokecomponents/poke-image-evolution/poke-image-evolution.component";
-import { PokeMonsterComponent } from '@pokemon/pages/poke-monster/poke-monster.component';
 import { PokeStatsComponent } from '@pokecomponents/poke-stats/poke-stats.component';
 import { PokeTypesComponent } from '@pokecomponents/poke-types/poke-types.component';
+import { PokeMonsterComponent } from '@pokemon/pages/poke-monster/poke-monster.component';
 import { PokedexComponent } from '@pokemon/pages/pokedex/pokedex.component';
-import { PokemonRoutingModule } from './pokemon-routing.module';
 import { GenerationDashboardComponent } from './pages/generation-dashboard/generation-dashboard.component';
-import { LoadingPageComponent } from '@components/loading-page/loading-page.component';
+import { PokemonRoutingModule } from './pokemon-routing.module';
+import { PokeMovesComponent } from './components/poke-moves/poke-moves.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { LoadingPageComponent } from '@components/loading-page/loading-page.comp
     EvolutionCardComponent,
     EvolutionDetailCardComponent,
     EvolutionDetailDualCardComponent,
+    NoEvolutionCardComponent,
+    PokeMovesComponent,
     //global-components
     SeparatorComponent,
     LoadingPageComponent,
@@ -61,6 +65,8 @@ import { LoadingPageComponent } from '@components/loading-page/loading-page.comp
     EvolutionDetailDualCardComponent,
     GenerationDashboardComponent,
     LoadingPageComponent,
+    NoEvolutionCardComponent,
+    PokeMovesComponent,
   ],
 })
 export class PokemonModule {}
