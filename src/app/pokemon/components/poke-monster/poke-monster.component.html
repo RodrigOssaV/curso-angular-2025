@@ -1,4 +1,4 @@
-<div class="pokemon-card">
+<section class="pokemon-card">
   <app-poke-card [pokeCard]="pokeMonster" [pokeCardGenera]="genera" [pokeCardFlavorText]="selectedFlavorText" />
 
   <app-pokemon-measurements [pokeMeasurements]="pokeMonster" />
@@ -9,4 +9,6 @@
 
   <app-poke-stats [pokeStats]="pokeMonster" />
 
-</div>
+  <app-poke-evolutions [evolutionChain]="evolutionChain" />
+
+</section>

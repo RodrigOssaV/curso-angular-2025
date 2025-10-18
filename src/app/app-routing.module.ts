@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
   { path: 'weather', loadChildren: () => import('./weather/weather.module').then(m => m.WeatherModule) },
   { path: 'battle-royale', loadChildren: () => import('./rps-game/rps-game.module').then(m => m.RpsGameModule) },
-  { path: 'pokemon', loadChildren: () => import('./pokemon/pokemon.module').then(m => m.PokemonModule) },
+  { path: 'pokelab', loadChildren: () => import('./pokemon/pokemon.module').then(m => m.PokemonModule) },
   { path: '**', component: NoEncontradoComponent },
 ];
 

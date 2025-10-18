@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@app/environments/environment';
-import { Pokemon, PokemonResponse } from '@app/pokemon/models/pokemon';
+import { EvolutionChainResponse } from '@pokemon/models/evolution-chain';
+import { Pokemon, PokemonResponse } from '@pokemon/models/pokemon';
 import { PokemonSpeciesResponse } from '@pokemon/models/pokemon-species';
 import { map, Observable } from 'rxjs';
 
@@ -34,5 +35,10 @@ export class PokemonService {
           genera: response.genera.filter(genera => genera.language.name === 'en'),
         }))
       )
+  }
+
+  getEvolutionChain(id: number): Observable<EvolutionChainResponse>{
+    const characterUrl = `${this.url}/evolution-chain/${id}`;
+    return this.http.get<EvolutionChainResponse>(characterUrl);
   }
 }
