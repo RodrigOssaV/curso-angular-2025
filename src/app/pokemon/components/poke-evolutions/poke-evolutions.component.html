@@ -1,0 +1,67 @@
+<h3 class="section-title">Evolutions</h3>
+
+<div class="evolution-chain">
+  <!-- Si tiene múltiples evoluciones (como Eevee) -->
+  <ng-container *ngIf="chain?.evolves_to && chain!.evolves_to.length > 2">
+    <div class="multi-evolution-container">
+      <!-- Pokémon central (base) -->
+      <div class="base-pokemon">
+        <div class="pokemon-card">
+          <app-poke-image-evolution [pokeImageEvolution]="specie" />
+          <div class="pokemon-name">{{ specie.name | titlecase }}</div>
+        </div>
+      </div>
+
+      <!-- Evoluciones en grid responsivo -->
+      <div class="evolutions-grid">
+        <div class="evolution-item" *ngFor="let evol of chain!.evolves_to">
+          <div class="pokemon-card">
+            <app-poke-image-evolution [pokeImageEvolution]="evol.species" />
+            <div class="pokemon-name">
+              {{ evol?.species?.name | titlecase }}
+            </div>
+            <div class="evolution-requirements">
+              {{ getEvolutionRequirement(evol.evolution_details) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- Evolución simple/lineal (1-2-3 evoluciones) -->
+  <ng-container *ngIf="chain?.evolves_to && chain!.evolves_to.length <= 2">
+    <!-- Pokémon base (primera etapa, ex: charmander) -->
+    <app-evolution-card [evolutionSpecie]="specie" />
+
+    <ng-container *ngIf="chain.evolves_to.length === 1">
+      <!-- Primera evolución (segunda etapa, ex: charmeleon) -->
+      <app-evolution-detail-card [evolutionDetailCard]="chain.evolves_to[0]" />
+      <app-evolution-card [evolutionSpecie]="chain.evolves_to[0].species" />
+
+      <!-- Segunda evolución (tercera etapa, ex: charizard) -->
+      <ng-container *ngIf="chain!.evolves_to[0].evolves_to && chain!.evolves_to[0].evolves_to.length > 0">
+        <app-evolution-detail-card [evolutionDetailCard]="chain.evolves_to[0].evolves_to[0]" />
+        <app-evolution-card [evolutionSpecie]="chain.evolves_to[0].evolves_to[0].species" />
+      </ng-container>
+    </ng-container>
+
+    <!-- Dos evoluciones -->
+    <ng-container *ngIf="chain.evolves_to.length === 2">
+      <div class="dual-evolution">
+        <div class="evolution-branch" *ngFor="let evol of chain!.evolves_to">
+          <app-evolution-detail-dual-card [evolutionDetailDualCard]="evol" />
+          <app-evolution-card [evolutionSpecie]="evol?.species" />
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <!-- Si no tiene evoluciones -->
+  <ng-container *ngIf="!chain?.evolves_to || chain!.evolves_to.length === 0">
+    <!-- TODO component not-evolution -->
+    <div class="evolution-stage">
+      <div class="no-evolution">This Pokémon doesn't evolve... for now.</div>
+    </div>
+  </ng-container>
+</div>

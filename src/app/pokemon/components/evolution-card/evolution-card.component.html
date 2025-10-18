@@ -1,0 +1,6 @@
+<div class="evolution-stage">
+  <div class="pokemon-image" (click)="routerPokemonName(specie.name)">
+    <app-poke-image-evolution [pokeImageEvolution]="specie" />
+  </div>
+  <div class="pokemon-name">{{ specie.name | titlecase }}</div>
+</div>

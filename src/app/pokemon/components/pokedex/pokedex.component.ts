@@ -40,6 +40,6 @@ export class PokedexComponent implements OnInit {
   }
 
   goToPokemon(name: string){
-    this.router.navigate(['/pokemon/pokedex', name]);
+    this.router.navigate(['/pokelab/labdex', name]);
   }
 }
