@@ -14,6 +14,9 @@ import { catchError, filter, map } from 'rxjs/operators';
 export class GenerationDashboardComponent implements OnInit {
 
   pokemonList!: Pokemon[];
+
+  loadingTitle: string = 'Loading Labdex...'
+  loadingPokeInformation: boolean = true;
   
   constructor(
     private route: ActivatedRoute,
@@ -53,7 +56,8 @@ export class GenerationDashboardComponent implements OnInit {
             this.pokemonList = pkSp
               .filter((pokemon): pokemon is Pokemon => pokemon !== null)
               .sort((a, b) => a.id - b.id);
-            // console.log(this.pokemonList);
+            console.log(this.pokemonList);
+            this.loadingPokeInformation = false;
           })
       },
       error: error => {

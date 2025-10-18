@@ -31,6 +31,9 @@ export class PersonajesComponent implements OnInit {
   // loading controller
   cargandoJugadores: boolean = true;
 
+  loadingTitle: string = 'Loading Battle Royal...'
+  loadingCharactersBattleRoyal: boolean = true;
+
   constructor(private rickAndMortyService: RickAndMortyService) {}
 
   ngOnInit(): void {
@@ -42,6 +45,7 @@ export class PersonajesComponent implements OnInit {
         if (this.characters.length > 0) {
           this.cargandoJugadores = false;
         }
+        this.loadingCharactersBattleRoyal = false;
       },
       error: (error) => console.error(error),
     });

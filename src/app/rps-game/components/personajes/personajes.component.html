@@ -1,8 +1,13 @@
 <div class="column">
+  <div *ngIf="loadingCharactersBattleRoyal" class="loading-overlay">
+    <app-loading-page [loadingText]="loadingTitle" />
+  </div>
+
   <h2 style="color: white;">Lista de personajes</h2>
 
   <!-- vista de jugadores -->
-  <div class="grid" *ngIf="!cargandoJugadores; else loading" [class.disabled-selection]="selectPlayerOne && selectPlayerTwo">
+  <div class="grid" *ngIf="!cargandoJugadores; else loading"
+    [class.disabled-selection]="selectPlayerOne && selectPlayerTwo">
     <div class="card" *ngFor="let p of characters" [ngClass]="{
       'selected-player-one': p === selectPlayerOne && p !== selectPlayerTwo,
       'selected-player-two': p === selectPlayerTwo && p !== selectPlayerOne,
@@ -17,10 +22,10 @@
 
   <!-- vista carga de jugadores API https://rickandmortyapi.com/api -->
   <ng-template #loading>
-    <p style="color: white;">Cargando personajes...</p>
-  </ng-template> 
+    <p style="color: white;">Loading characters...</p>
+  </ng-template>
 
-  <h2 style="color: white;">Área combate</h2>
+  <h2 style="color: white;">Battle Royal</h2>
 
   <div class="versus-container">
     <!-- vista jugador uno -->
@@ -53,7 +58,7 @@
     <ng-container *ngIf="ganador.length > 0">
       <div class="winner-overlay">
         <div class="winner-content">
-          <h2>¡Resultado!</h2>
+          <h2>Result!</h2>
           <app-resultado-juego [ganador]="ganador" [numeroGanador]="numeroJugadorGanador" />
         </div>
       </div>

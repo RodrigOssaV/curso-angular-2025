@@ -9,7 +9,7 @@ import { WeatherBackgroundComponent } from '@weathercomponents/weather-backgroun
 import { WeatherDatetimeComponent } from '@weathercomponents/weather-datetime/weather-datetime.component';
 import { WeatherDetailComponent } from '@weathercomponents/weather-detail/weather-detail.component';
 import { WeatherPageComponent } from '@weathercomponents/weather-page/weather-page.component';
-
+import { LoadingPageComponent } from "@components/loading-page/loading-page.component";
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { WeatherPageComponent } from '@weathercomponents/weather-page/weather-pa
     IconoClimaComponent,
     WeatherBackgroundComponent,
     WeatherDetailComponent,
-    WeatherDatetimeComponent
+    WeatherDatetimeComponent,
+    LoadingPageComponent,
   ],
   imports: [
     CommonModule,
@@ -28,7 +29,8 @@ import { WeatherPageComponent } from '@weathercomponents/weather-page/weather-pa
     IconoClimaComponent,
     WeatherBackgroundComponent,
     WeatherDetailComponent,
-    WeatherDatetimeComponent
+    WeatherDatetimeComponent,
+    LoadingPageComponent
   ]
 })
 export class WeatherModule { }

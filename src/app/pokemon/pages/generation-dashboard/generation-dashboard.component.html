@@ -1,11 +1,16 @@
 <div class="pokedex-container">
+  <!-- Loading global -->
+  <div *ngIf="loadingPokeInformation" class="loading-overlay">
+    <app-loading-page [loadingText]="loadingTitle"/>
+  </div>
 
-  <div *ngFor="let pkm of pokemonList" class="pokemon-card" (click)="goToPokemon(pkm.name)"> 
-    <img class="pokemon-image"
+  <!-- Lista de Pokémon -->
+  <div *ngFor="let pkm of pokemonList" class="pokemon-card" (click)="goToPokemon(pkm.name)">
+    <img
+      class="pokemon-image"
       src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pkm.id}}.png"
-      [alt]="pkm.name" />
-    <p class="pokemon-name" (click)="goToPokemon(pkm.name)"> 
-      {{ pkm.name }}
-    </p>
+      [alt]="pkm.name"
+    />
+    <p class="pokemon-name">{{ pkm.name }}</p>
   </div>
 </div>

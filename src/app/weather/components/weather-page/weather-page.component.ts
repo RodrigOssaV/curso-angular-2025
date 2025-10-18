@@ -17,6 +17,9 @@ export class WeatherPageComponent implements OnInit {
 
   error: boolean = false;
 
+  loadingTitle: string = 'Loading City Weather Now...'
+  loadingContentWeather: boolean = true;
+
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
@@ -25,6 +28,7 @@ export class WeatherPageComponent implements OnInit {
         this.weatherData = data;
         this.weatherDataList.push(data);
         this.main = data.weather[0].main;
+        this.loadingContentWeather = false;
       },
       error: (error) => {
         console.log(error);

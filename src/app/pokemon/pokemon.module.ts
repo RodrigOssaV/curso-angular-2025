@@ -18,6 +18,7 @@ import { PokeTypesComponent } from '@pokecomponents/poke-types/poke-types.compon
 import { PokedexComponent } from '@pokemon/pages/pokedex/pokedex.component';
 import { PokemonRoutingModule } from './pokemon-routing.module';
 import { GenerationDashboardComponent } from './pages/generation-dashboard/generation-dashboard.component';
+import { LoadingPageComponent } from '@components/loading-page/loading-page.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { GenerationDashboardComponent } from './pages/generation-dashboard/gener
     EvolutionDetailDualCardComponent,
     //global-components
     SeparatorComponent,
+    LoadingPageComponent,
     //pages-components
     GenerationDashboardComponent,
   ],
@@ -58,6 +60,7 @@ import { GenerationDashboardComponent } from './pages/generation-dashboard/gener
     SeparatorComponent,
     EvolutionDetailDualCardComponent,
     GenerationDashboardComponent,
+    LoadingPageComponent,
   ],
 })
 export class PokemonModule {}

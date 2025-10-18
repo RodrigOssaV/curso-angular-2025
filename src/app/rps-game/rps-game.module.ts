@@ -11,6 +11,7 @@ import { CardPersonajeComponent } from "@RPSGameComponents/card-personaje/card-p
 import { CustomButtonComponent } from "@RPSGameComponents/custom-button/custom-button.component";
 import { PersonajesComponent } from "@RPSGameComponents/personajes/personajes.component";
 import { ResultadoJuegoComponent } from "@RPSGameComponents/resultado-juego/resultado-juego.component";
+import { LoadingPageComponent } from "@components/loading-page/loading-page.component";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ResultadoJuegoComponent } from "@RPSGameComponents/resultado-juego/resu
     PersonajesComponent,
     ResultadoJuegoComponent,
     CustomButtonComponent,
+    LoadingPageComponent,
   ],
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ import { ResultadoJuegoComponent } from "@RPSGameComponents/resultado-juego/resu
     PersonajesComponent,
     ResultadoJuegoComponent,
     CustomButtonComponent,
+    LoadingPageComponent,
   ]
 })
 export class RpsGameModule { }

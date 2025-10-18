@@ -1,6 +1,10 @@
 <main>
   <section class="section">
 
+    <div *ngIf="loadingContentWeather" class="loading-overlay">
+      <app-loading-page [loadingText]="loadingTitle"/>
+    </div>
+
     <app-weather-background [weather]="weatherData!" />
     
     <div class="weather-left">
