@@ -9,7 +9,7 @@ import { WeatherBackgroundComponent } from '@weathercomponents/weather-backgroun
 import { WeatherDatetimeComponent } from '@weathercomponents/weather-datetime/weather-datetime.component';
 import { WeatherDetailComponent } from '@weathercomponents/weather-detail/weather-detail.component';
 import { WeatherPageComponent } from '@weathercomponents/weather-page/weather-page.component';
-import { LoadingPageComponent } from "@components/loading-page/loading-page.component";
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,19 +18,18 @@ import { LoadingPageComponent } from "@components/loading-page/loading-page.comp
     WeatherBackgroundComponent,
     WeatherDetailComponent,
     WeatherDatetimeComponent,
-    LoadingPageComponent,
   ],
   imports: [
     CommonModule,
     WeatherRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule,
   ],
   exports: [
     IconoClimaComponent,
     WeatherBackgroundComponent,
     WeatherDetailComponent,
     WeatherDatetimeComponent,
-    LoadingPageComponent
   ]
 })
 export class WeatherModule { }

@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { LoadingPageComponent } from '@components/loading-page/loading-page.component';
 import { SeparatorComponent } from '@components/separator/separator.component';
 import { MeasurementsPipe } from '@pipes/measurements.pipe';
 import { ZerosPipe } from '@pipes/zeros.pipe';
@@ -21,6 +20,7 @@ import { PokedexComponent } from '@pokemon/pages/pokedex/pokedex.component';
 import { GenerationDashboardComponent } from './pages/generation-dashboard/generation-dashboard.component';
 import { PokemonRoutingModule } from './pokemon-routing.module';
 import { PokeMovesComponent } from './components/poke-moves/poke-moves.component';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -44,11 +44,14 @@ import { PokeMovesComponent } from './components/poke-moves/poke-moves.component
     PokeMovesComponent,
     //global-components
     SeparatorComponent,
-    LoadingPageComponent,
     //pages-components
     GenerationDashboardComponent,
   ],
-  imports: [CommonModule, PokemonRoutingModule],
+  imports: [
+    CommonModule, 
+    PokemonRoutingModule,
+    SharedModule,
+  ],
   exports: [
     PokedexComponent,
     PokeMonsterComponent,
@@ -64,7 +67,6 @@ import { PokeMovesComponent } from './components/poke-moves/poke-moves.component
     SeparatorComponent,
     EvolutionDetailDualCardComponent,
     GenerationDashboardComponent,
-    LoadingPageComponent,
     NoEvolutionCardComponent,
     PokeMovesComponent,
   ],

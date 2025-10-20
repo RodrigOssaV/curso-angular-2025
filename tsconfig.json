@@ -29,6 +29,7 @@
       "@services/*": ["src/app/services/*"],
       "@environment/*": ["src/app/environments/*"],
       "@components/*": ["src/app/components/*"],
+      "@shared/*": ["src/app/shared/*"],
       /* pokemon path */
       "@pokemon/*": ["src/app/pokemon/*"],
       "@pokepages/*": ["src/app/pokemon/pages/*"],
