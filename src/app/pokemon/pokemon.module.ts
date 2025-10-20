@@ -21,6 +21,7 @@ import { GenerationDashboardComponent } from './pages/generation-dashboard/gener
 import { PokemonRoutingModule } from './pokemon-routing.module';
 import { PokeMovesComponent } from './components/poke-moves/poke-moves.component';
 import { SharedModule } from '@shared/shared.module';
+import { PokeSearchInputComponent } from './components/poke-search-input/poke-search-input.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { SharedModule } from '@shared/shared.module';
     EvolutionDetailDualCardComponent,
     NoEvolutionCardComponent,
     PokeMovesComponent,
+    PokeSearchInputComponent,
     //global-components
     SeparatorComponent,
     //pages-components
@@ -69,6 +71,7 @@ import { SharedModule } from '@shared/shared.module';
     GenerationDashboardComponent,
     NoEvolutionCardComponent,
     PokeMovesComponent,
+    PokeSearchInputComponent,
   ],
 })
 export class PokemonModule {}

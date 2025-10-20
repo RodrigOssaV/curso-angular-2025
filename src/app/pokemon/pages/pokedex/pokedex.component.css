@@ -11,17 +11,22 @@
   z-index: 999;
 }
 
+.main-pokemon {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
 .pokedex-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
   padding: 20px;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  min-height: 100vh;
+  min-height: 50vh;
   transition: filter 0.3s ease;
 }
 
-/* 🔹 Por defecto, todas las cards están un poco oscuras */
+/* Por defecto, todas las cards están un poco oscuras */
 .generation-container {
   position: relative;
   border-radius: 1.5rem;
@@ -34,8 +39,8 @@
 
 /* 🔹 Al pasar el mouse por el contenedor, las demás quedan oscuras */
 .pokedex-container:hover .generation-container {
-  /* filter: brightness(0.4); */
   transform: scale(0.98);
+  /* filter: brightness(0.4); */
   /* opacity: 0.8; */
 }
 
