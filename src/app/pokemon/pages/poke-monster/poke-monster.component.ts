@@ -3,9 +3,10 @@ import { Title } from "@angular/platform-browser";
 import { ActivatedRoute } from '@angular/router';
 import { PokemonService } from '@services/pokemon.service';
 import { Chain } from '@pokemon/models/evolution-chain';
-import { Pokemon } from '@pokemon/models/pokemon';
+import { Moves, Pokemon } from '@pokemon/models/pokemon';
 import { FlavorTextEntry, Genera } from '@pokemon/models/pokemon-species';
 import { filter, map } from 'rxjs/operators';
+import { MoveResponse } from '@pokemon/models/move';
 
 @Component({
   selector: 'app-poke-monster',
@@ -16,9 +17,10 @@ export class PokeMonsterComponent implements OnInit {
 
   genera?: Genera;
   pokeMonster?: Pokemon;
+  evolutionChain?: Chain;
+  pokeMovesList!: MoveResponse[];
   selectedFlavorText?: FlavorTextEntry;
   flavorTextEntries?: FlavorTextEntry[];
-  evolutionChain?: Chain;
 
   constructor(
     private route: ActivatedRoute,
@@ -43,6 +45,8 @@ export class PokeMonsterComponent implements OnInit {
       next: response => {
         // console.log('getPokemon: ', response);
         this.pokeMonster = response;
+        this.pokeMovesList = response.moves;
+        // console.log(this.pokeMovesList);
 
         this.pokemonService.getPokemonSpecies(this.pokeMonster.id)
           .subscribe(pk => {

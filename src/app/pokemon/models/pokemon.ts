@@ -21,7 +21,7 @@ export interface Pokemon {
   id: number;
   is_default: boolean;
   location_area_encounters: string;
-  moves: Move[];
+  moves: Moves[];
   name: string;
   order: number;
   //past_abilities
@@ -37,16 +37,23 @@ export interface Ability {
   ability: {
     name: string;
     url: string;
-  }
+  };
   is_hidden: boolean;
   slot: number;
 }
 
-export interface Move {
+export interface Moves {
   move: {
     name: string;
     url: string;
-  }
+  };
+  version_group_details: {
+    level_learned_at: number;
+    move_learn_method: {
+      name: string;
+      url: string;
+    };
+  }[];
 }
 
 export interface Sprites {
@@ -60,7 +67,7 @@ export interface Stat {
   stat: {
     name: string;
     url: string;
-  }
+  };
 }
 
 export interface Type {
@@ -68,5 +75,5 @@ export interface Type {
   type: {
     name: string;
     url: string;
-  }
+  };
 }

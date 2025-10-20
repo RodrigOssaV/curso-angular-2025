@@ -6,6 +6,7 @@ import { EvolutionChainResponse } from '@pokemon/models/evolution-chain';
 import { Pokemon, PokemonResponse } from '@pokemon/models/pokemon';
 import { PokemonSpeciesResponse } from '@pokemon/models/pokemon-species';
 import { map, Observable } from 'rxjs';
+import { Move, MoveResponse } from '@pokemon/models/move';
 
 @Injectable({
   providedIn: 'root',
@@ -53,5 +54,10 @@ export class PokemonService {
   getGeneration(name: string): Observable<GenerationResponse> {
     const generationsUrl = `${this.url}/generation/${name}`;
     return this.http.get<GenerationResponse>(generationsUrl);
+  }
+
+  getMove(name: string): Observable<Move> {
+    const moveUrl = `${this.url}/move/${name}`;
+    return this.http.get<Move>(moveUrl);
   }
 }

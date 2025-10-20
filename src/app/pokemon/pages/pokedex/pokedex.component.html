@@ -1,6 +1,13 @@
 <div class="pokedex-container">
-  <!-- TODO loading controllers -->
-  <div *ngFor="let generation of generationsList" class="generation-container" (click)="goToGeneration(generation.name)">
-    {{generation.name}} - {{generation.main_region.name}}
+  <div *ngIf="loadingPokeInformation" class="loading-overlay">
+    <app-loading-page [loadingText]="loadingTitle" />
+  </div>
+
+  <div *ngFor="let generation of generationsList" class="generation-container"
+    (click)="goToGeneration(generation.name)">
+    <img src="/assets/pokemon/pkm-card-default.jpg" alt="{{generation.name}}" />
+    <div class="generation-name">
+      {{ generation.main_region.name | titlecase }}
+    </div>
   </div>
 </div>

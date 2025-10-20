@@ -1,4 +1,5 @@
 <section class="pokemon-card">
+
   <app-poke-card [pokeCard]="pokeMonster" [pokeCardGenera]="genera" [pokeCardFlavorText]="selectedFlavorText" />
 
   <app-pokemon-measurements [pokeMeasurements]="pokeMonster" />
@@ -10,5 +11,7 @@
   <app-poke-stats [pokeStats]="pokeMonster" />
 
   <app-poke-evolutions [evolutionChain]="evolutionChain" />
+
+  <app-poke-moves [pokeMoves]="pokeMovesList"/>
 
 </section>

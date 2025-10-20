@@ -1,0 +1,24 @@
+<h3 class="section-title">Moves</h3>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>accuracy</th>
+        <th>power</th>
+        <th>power points</th>
+        <th>damage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let move of pokeMoveList">
+        <td>{{ move.move.name }}</td>
+        <td>{{ move.detail?.accuracy !== null ? move.detail?.accuracy : '-' }}</td>
+        <td>{{ move.detail?.power !== null ? move.detail?.power : '-'}}</td>
+        <td>{{ move.detail?.pp }}</td>
+        <td>{{ move.detail?.damage_class.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

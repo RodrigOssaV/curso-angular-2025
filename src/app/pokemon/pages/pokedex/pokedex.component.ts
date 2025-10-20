@@ -14,6 +14,9 @@ export class PokedexComponent implements OnInit {
 
   generationsList!: GenerationResponse[];
 
+  loadingTitle: string = 'Loading PokéLab...'
+  loadingPokeInformation: boolean = true;
+
   ngOnInit(): void {
     this.pokemonService.getGenerations().subscribe({
       next: (response) => {
@@ -21,9 +24,11 @@ export class PokedexComponent implements OnInit {
           this.pokemonService.getGeneration(r.name)
         );
 
-        forkJoin(request).subscribe((generation) => {
-          this.generationsList = generation;
-        });
+        forkJoin(request)
+          .subscribe((generation) => {
+            this.generationsList = generation;
+            this.loadingPokeInformation = false;
+          });
       },
       error: (error) => {
         console.log(error);
