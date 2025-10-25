@@ -6,6 +6,13 @@
   padding: 20px;
 }
 
+.express-information {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
 .search-container input {
   width: 260px;
   padding: 10px 15px;

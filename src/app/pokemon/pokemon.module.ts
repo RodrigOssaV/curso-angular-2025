@@ -22,6 +22,7 @@ import { PokemonRoutingModule } from './pokemon-routing.module';
 import { PokeMovesComponent } from './components/poke-moves/poke-moves.component';
 import { SharedModule } from '@shared/shared.module';
 import { PokeSearchInputComponent } from './components/poke-search-input/poke-search-input.component';
+import { PokeExpressInformationComponent } from './components/poke-express-information/poke-express-information.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { PokeSearchInputComponent } from './components/poke-search-input/poke-se
     SeparatorComponent,
     //pages-components
     GenerationDashboardComponent,
+    PokeExpressInformationComponent,
   ],
   imports: [
     CommonModule, 
@@ -72,6 +74,7 @@ import { PokeSearchInputComponent } from './components/poke-search-input/poke-se
     NoEvolutionCardComponent,
     PokeMovesComponent,
     PokeSearchInputComponent,
+    PokeExpressInformationComponent,
   ],
 })
 export class PokemonModule {}
