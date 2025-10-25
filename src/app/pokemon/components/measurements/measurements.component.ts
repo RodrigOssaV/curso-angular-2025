@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { Pokemon } from '@pokemon/models/pokemon';
 
 @Component({
@@ -13,7 +13,7 @@ export class MeasurementsComponent implements OnChanges{
   height: number = 0;
   weight: number = 0;
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     // console.log(changes);
     if(this.pokeMeasurements){
       // console.log(this.pokeMeasurements);

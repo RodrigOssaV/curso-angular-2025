@@ -17,7 +17,7 @@ export class PokemonService {
   constructor(private http: HttpClient) {}
 
   getAllPokemons(): Observable<PokemonResponse> {
-    const pokemonsUrl = `${this.url}/pokemon/?limit=151`;
+    const pokemonsUrl = `${this.url}/pokemon/?limit=20`;
     return this.http.get<PokemonResponse>(pokemonsUrl);
   }
 

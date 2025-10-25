@@ -56,7 +56,6 @@ export class GenerationDashboardComponent implements OnInit {
             this.pokemonList = pkSp
               .filter((pokemon): pokemon is Pokemon => pokemon !== null)
               .sort((a, b) => a.id - b.id);
-            // console.log(this.pokemonList);
             this.loadingPokeInformation = false;
           })
       },

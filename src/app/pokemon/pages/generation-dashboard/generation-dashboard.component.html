@@ -8,9 +8,10 @@
   <div *ngFor="let pkm of pokemonList" class="pokemon-card" (click)="goToPokemon(pkm.name)">
     <img
       class="pokemon-image"
-      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pkm.id}}.png"
+      [src]="pkm.sprites.front_default"
       [alt]="pkm.name"
     />
+    <!-- src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pkm.id}}.png" -->
     <p class="pokemon-name">{{ pkm.name }}</p>
   </div>
 </div>
