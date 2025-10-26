@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Origin } from '@RPSGame/models/character';
-import { RickAndMortyService } from '@services/rick-and-morty.service';
+import { RickAndMortyService } from '@RPSGame/services/rick-and-morty.service';
 
 @Component({
   selector: 'app-origenes',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Character } from '@RPSGame/models/character';
 import { Jugada, ResultadoJuego } from '@RPSGame/models/jugada';
-import { RickAndMortyService } from '@services/rick-and-morty.service';
+import { RickAndMortyService } from '@RPSGame/services/rick-and-morty.service';
 
 @Component({
   selector: 'app-personajes',

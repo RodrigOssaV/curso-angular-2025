@@ -1,7 +1,7 @@
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { PokeExpressInformationComponent } from '@pokemon/components/poke-express-information/poke-express-information.component';
-import { PokemonService } from '@services/pokemon.service';
+import { PokemonService } from '@pokemon/services/pokemon.service';
 
 @Component({
   selector: 'app-poke-search-input',

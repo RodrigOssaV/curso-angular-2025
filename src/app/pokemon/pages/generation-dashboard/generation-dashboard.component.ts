@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pokemon } from '@pokemon/models/pokemon';
-import { PokemonService } from '@services/pokemon.service';
+import { PokemonService } from '@pokemon/services/pokemon.service';
 import { forkJoin, of } from 'rxjs';
 import { catchError, filter, map } from 'rxjs/operators';
 

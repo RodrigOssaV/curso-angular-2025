@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { Move, MoveResponse } from '@pokemon/models/move';
-import { PokemonService } from '@services/pokemon.service';
+import { PokemonService } from '@pokemon/services/pokemon.service';
 
 @Component({
   selector: 'app-poke-moves',
