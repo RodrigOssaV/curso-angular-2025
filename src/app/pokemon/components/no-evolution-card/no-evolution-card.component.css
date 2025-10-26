@@ -1,0 +1,10 @@
+.evolution-stage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.no-evolution {
+  font-style: italic;
+  color: #ffd700;
+}

@@ -1,0 +1,27 @@
+<section class="main-pokemon">
+  <!-- Loading global -->
+  <div *ngIf="loadingPokeInformation" class="loading-overlay">
+    <app-loading-page [loadingText]="loadingTitle" />
+  </div>
+
+  <div>
+    <button class="pokedex-back-btn" (click)="goBackPokeLab()"> 
+      <span>◀ Back</span>
+    </button>
+    <app-poke-search-input />
+  </div>
+
+  <div class="pokedex-container">
+
+    <!-- Lista de Pokémon -->
+    <div *ngFor="let pkm of pokemonList" class="pokemon-card" (click)="goToPokemon(pkm.name)">
+      <img
+        class="pokemon-image"
+        [src]="pkm.sprites.front_default"
+        [alt]="pkm.name"
+      />
+      <!-- src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pkm.id}}.png" -->
+      <p class="pokemon-name"># {{ pkm.id| zeros}} {{ pkm.name }}</p>
+    </div>
+  </div>
+</section>

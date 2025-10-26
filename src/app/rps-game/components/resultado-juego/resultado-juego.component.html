@@ -1,0 +1,16 @@
+<div class="winner-name" [ngClass]="{
+      'selected-player-one': numeroGanador === 1,
+      'selected-player-two': numeroGanador === 2,
+      'selected-both': numeroGanador === 0,
+    }">
+  {{ getNombreGanador(ganador[0]) }}
+  <span *ngIf="numeroGanador !== 0">
+    (P{{numeroGanador}})
+  </span>
+</div>
+
+<div class="jugadas-container">
+  <p class="icon-large">{{ getIcon(ganador[0].jugada_playerOne.jugada) }}</p>
+  <span class="vs-jugada">againt</span>
+  <p class="icon-large">{{ getIcon(ganador[0].jugada_playerTwo.jugada) }}</p>
+</div>

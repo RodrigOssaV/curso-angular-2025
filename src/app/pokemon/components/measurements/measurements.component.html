@@ -1,0 +1,10 @@
+<h3 class="section-title">Measurements</h3>
+
+<div class="content">
+  <div class="content-item">
+    <div class="content-value">{{ weight | measurements: 'hg-to-kg' | number:'1.0-1' }} kg</div>
+  </div>
+  <div class="content-item">
+    <div class="content-value">{{ height | measurements: 'dm-to-cm' }} cm</div>
+  </div>
+</div>

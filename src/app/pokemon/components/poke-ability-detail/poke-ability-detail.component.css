@@ -1,0 +1,14 @@
+.main-content {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+  font-family: 'Press Start 2P', monospace;
+  text-align: center;
+}
+
+.title {
+  color: #ffd700;
+}
+.effect-description {
+  font-style: italic;
+}

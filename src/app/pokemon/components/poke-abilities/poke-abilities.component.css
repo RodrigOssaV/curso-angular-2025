@@ -1,0 +1,26 @@
+.pokemon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.pokemon-list li {
+  background: rgba(0, 0, 0, 0.2);
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+li:hover {
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.hidden-ability {
+  color: #ffeb3b;
+  font-style: italic;
+  font-size: 12px;
+}

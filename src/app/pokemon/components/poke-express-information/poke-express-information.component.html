@@ -1,0 +1,14 @@
+<section class="section" [ngStyle]="{'background-image': bgUrl}">
+  <div class="content">
+    <p># {{ pokemon.id | zeros }}</p>
+    <img [attr.loading]="'lazy'" [src]="pokemon.sprites.front_shiny" [alt]="pokemon.name">
+    <p>{{ pokemon.name | uppercase }}</p>
+    <p>{{ pokemonSpecie.genera[0].genus}}</p>
+  </div>
+  <div>
+    <app-pokemon-measurements [pokeMeasurements]="pokemon" />
+    <app-poke-types [pokeTypes]="pokemon" />
+    <button (click)="goPokemon(pokemon.name)">More information</button>
+  </div>
+
+</section>

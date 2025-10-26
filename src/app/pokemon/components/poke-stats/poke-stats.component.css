@@ -1,0 +1,38 @@
+.pokemon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pokemon-list li {
+  background: rgba(0, 0, 0, 0.2);
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  /* border-left: 4px solid #00ff00; */
+  text-transform: capitalize;
+  
+  font-family: 'Press Start 2P', monospace;
+}
+
+.stats-list li {
+  /* border-left-color: #2196f3; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-name {
+  text-transform: capitalize;
+  flex: 1;
+}
+
+.stat-value {
+  /* background: #2196f3; */
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+  min-width: 40px;
+  text-align: center;
+}

@@ -1,0 +1,79 @@
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(10, 10, 25, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.pokedex-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  min-height: 50vh;
+  transition: filter 0.3s ease;
+}
+
+/* Por defecto, todas las cards están un poco oscuras */
+.generation-container {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  filter: brightness(0.6);
+}
+
+/* 🔹 Al pasar el mouse por el contenedor, las demás quedan oscuras */
+.pokedex-container:hover .generation-container {
+  transform: scale(0.98);
+  /* filter: brightness(0.4); */
+  /* opacity: 0.8; */
+}
+
+/* 🔹 La card con hover se aclara y se destaca */
+.generation-container:hover {
+  filter: brightness(1);
+  transform: scale(1.05);
+  opacity: 1;
+  z-index: 2;
+}
+
+.generation-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.generation-container:hover img {
+  transform: scale(1.1);
+}
+
+.generation-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: black;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(2px);
+  transition: background 0.3s ease;
+}
+
+.generation-container:hover .generation-name {
+  background: rgba(255, 255, 255, 0.25);
+}

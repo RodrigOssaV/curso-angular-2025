@@ -1,0 +1,56 @@
+<main>
+  <section class="section">
+
+    <div *ngIf="loadingContentWeather" class="loading-overlay">
+      <app-loading-page [loadingText]="loadingTitle"/>
+    </div>
+
+    <app-weather-background [weather]="weatherData!" />
+    
+    <div class="weather-left">
+      <p>City Weather Now</p>
+      <div class="weather-info">
+        <div class="temperature">
+          {{weatherData?.main?.temp | number:'1.0-0'}}°
+        </div>
+        <div class="location">
+          <h2>{{weatherData?.name}}, {{weatherData?.sys?.country}}</h2>
+          <app-weather-datetime />
+        </div>
+        <div class="status">
+          <app-icono-clima [weather]="weatherData!" />
+          <span>{{main}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-right">
+      
+      <p *ngIf="error" class="city-not-found">**City not found ({{errorLocation}})</p>
+      <!-- searching & button to search -->
+      <div class="search-bar">
+        <div class="content-input">
+          <input [(ngModel)]="location" type="string" placeholder="Search your location..." />
+          <!-- <button (click)="searchWeatherLocation()">Search</button> -->
+        </div>
+        <div class="button-search" (click)="searchWeatherLocation()">
+          <img loading="lazy" src="/assets/weather/search.png" />
+        </div>
+      </div>
+
+      <!-- weather location search -->
+      <div class="locations">
+        <h3>Lastest locations</h3>
+        <p *ngFor="let location of weatherDataList.slice().reverse(); let i = index" (click)="searchWeatherLocationList(location.name)">
+          {{location.name}}
+        </p>
+      </div>
+
+      <!-- weather more info -->
+      <div class="weather-details">
+        <app-weather-detail [weather]="weatherData!" />
+      </div>
+    </div>
+
+  </section>
+</main>
