@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Chain } from '@pokemon/models/evolution-chain';
@@ -7,15 +7,15 @@ import { Pokemon } from '@pokemon/models/pokemon';
 import { FlavorTextEntry, Genera } from '@pokemon/models/pokemon-species';
 import { PokemonService } from '@pokemon/services/pokemon.service';
 import { NavigationService } from '@shared/services/navigation.service';
-import { forkJoin } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { forkJoin, Subject } from 'rxjs';
+import { filter, map, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-poke-monster',
   templateUrl: './poke-monster.component.html',
   styleUrls: ['./poke-monster.component.css'],
 })
-export class PokeMonsterComponent implements OnInit {
+export class PokeMonsterComponent implements OnInit, OnDestroy {
   genera?: Genera;
   pokeMonster?: Pokemon;
   evolutionChain?: Chain;
@@ -26,6 +26,8 @@ export class PokeMonsterComponent implements OnInit {
   previousUrl: string | null = null;
   currentUrl: string | null = null;
   genUrl: string | null = null;
+
+  private destroy$ = new Subject<void>();
 
   constructor(
     private route: ActivatedRoute,
@@ -51,45 +53,48 @@ export class PokeMonsterComponent implements OnInit {
   }
 
   getInfoPokemon(name: string) {
-    this.pokemonService.getPokemon(name).subscribe({
-      next: (response) => {
-        // console.log('getPokemon ', response);
-        this.pokeMonster = response;
-        const requestMove = response.moves.map((mv => this.pokemonService.getMove(mv.move.name)));
+    this.pokemonService.getPokemon(name)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: (response) => {
+          // console.log('getPokemon ', response);
+          this.pokeMonster = response;
+          const requestMove = response.moves.map((mv => this.pokemonService.getMove(mv.move.name)));
 
-        forkJoin(requestMove)
-          .subscribe(movesResponse => {
-            this.pokeMovesList = movesResponse;
-          })
+          forkJoin(requestMove)
+            .subscribe(movesResponse => {
+              this.pokeMovesList = movesResponse;
+            })
 
-        this.pokemonService
-          .getPokemonSpecies(this.pokeMonster.id)
-          .subscribe((pk) => {
-            this.genera = pk.genera[0];
-            this.flavorTextEntries = pk.flavor_text_entries;
-            this.selectedFlavorText = this.flavorTextEntries[0];
+          this.pokemonService
+            .getPokemonSpecies(this.pokeMonster.id)
+            .subscribe((pk) => {
+              this.genera = pk.genera[0];
+              this.flavorTextEntries = pk.flavor_text_entries;
+              this.selectedFlavorText = this.flavorTextEntries[0];
 
-            const evolutionChainUrl = pk.evolution_chain.url;
-            const id_evolutionChain = evolutionChainUrl
-              .split('evolution-chain/')[1]
-              .replace('/', '');
+              const evolutionChainUrl = pk.evolution_chain.url;
+              const id_evolutionChain = evolutionChainUrl
+                .split('evolution-chain/')[1]
+                .replace('/', '');
 
-            this.pokemonService
-              .getEvolutionChain(Number(id_evolutionChain))
-              .subscribe({
-                next: (response) => {
-                  this.evolutionChain = response.chain;
-                },
-                error: (error) => {
-                  console.log(error);
-                },
-              });
-          });
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
+              this.pokemonService
+                .getEvolutionChain(Number(id_evolutionChain))
+                .subscribe({
+                  next: (response) => {
+                    console.log('getEvolutionChain ', response);
+                    this.evolutionChain = response.chain;
+                  },
+                  error: (error) => {
+                    console.log(error);
+                  },
+                });
+            });
+        },
+        error: (error) => {
+          console.log(error);
+        },
+      });
   }
 
   goBackPokeLab() {
@@ -98,5 +103,11 @@ export class PokeMonsterComponent implements OnInit {
       return;
     }
     this.router.navigate([`pokelab/generation/${this.genUrl}`]);
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+    // console.log('destroy getInfoPokemon');
   }
 }

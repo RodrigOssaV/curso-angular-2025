@@ -5,15 +5,15 @@
   <ng-container *ngIf="chain?.evolves_to && chain!.evolves_to.length > 2">
     <div class="multi-evolution-container">
       <!-- Pokémon central (base) -->
-      <div class="base-pokemon">
+      <!-- <div class="base-pokemon">
         <div class="pokemon-card">
           <app-poke-image-evolution [pokeImageEvolution]="specie" />
           <div class="pokemon-name">{{ specie.name | titlecase }}</div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Evoluciones en grid responsivo -->
-      <div class="evolutions-grid">
+      <!-- <div class="evolutions-grid">
         <div class="evolution-item" *ngFor="let evol of chain!.evolves_to">
           <div class="pokemon-card">
             <app-poke-image-evolution [pokeImageEvolution]="evol.species" />
@@ -25,7 +25,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </ng-container>
 

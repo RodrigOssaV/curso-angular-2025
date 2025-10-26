@@ -12,11 +12,14 @@ export class PokeAbilityDetailComponent implements OnInit{
   
   name: string = '';
   flavor_text: string = '';
+  short_effect: string = '';
 
   ngOnInit(): void {
     if(this.ability){
+      console.log(this.ability);
       this.name = this.ability.name;
       this.flavor_text = this.ability.flavor_text_entries[0].flavor_text;
+      this.short_effect = this.ability.effect_entries[0].short_effect;
     }
   }
 

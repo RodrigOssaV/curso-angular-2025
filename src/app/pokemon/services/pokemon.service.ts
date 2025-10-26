@@ -71,7 +71,10 @@ export class PokemonService {
         ...response,
         flavor_text_entries: response.flavor_text_entries.filter(
           (flavor) => flavor.language.name === 'en'
-        )
+        ),
+        effect_entries: response.effect_entries.filter(
+          (effect) => effect.language.name === 'en'
+        ),
       }))
     );
   }

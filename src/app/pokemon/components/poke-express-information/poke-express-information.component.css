@@ -25,7 +25,7 @@
 p {
   color: black;
   font-weight: 700;
-	font-variant-numeric: ordinal;
+	/* font-variant-numeric: ordinal; */
 }
 
 button {

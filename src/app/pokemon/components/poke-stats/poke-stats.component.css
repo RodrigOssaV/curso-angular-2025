@@ -11,6 +11,8 @@
   border-radius: 8px;
   /* border-left: 4px solid #00ff00; */
   text-transform: capitalize;
+  
+  font-family: 'Press Start 2P', monospace;
 }
 
 .stats-list li {
