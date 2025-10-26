@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NoEncontradoComponent } from '@components/no-encontrado/no-encontrado.component';
+import { NoEncontradoComponent } from '@shared/components/no-encontrado/no-encontrado.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

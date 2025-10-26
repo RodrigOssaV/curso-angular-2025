@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { SeparatorComponent } from '@components/separator/separator.component';
 import { MeasurementsPipe } from '@pipes/measurements.pipe';
 import { ZerosPipe } from '@pipes/zeros.pipe';
 import { EvolutionCardComponent } from '@pokecomponents/evolution-card/evolution-card.component';
@@ -45,8 +44,6 @@ import { PokeExpressInformationComponent } from './components/poke-express-infor
     NoEvolutionCardComponent,
     PokeMovesComponent,
     PokeSearchInputComponent,
-    //global-components
-    SeparatorComponent,
     //pages-components
     GenerationDashboardComponent,
     PokeExpressInformationComponent,
@@ -68,7 +65,6 @@ import { PokeExpressInformationComponent } from './components/poke-express-infor
     PokeImageEvolutionComponent,
     EvolutionCardComponent,
     EvolutionDetailCardComponent,
-    SeparatorComponent,
     EvolutionDetailDualCardComponent,
     GenerationDashboardComponent,
     NoEvolutionCardComponent,

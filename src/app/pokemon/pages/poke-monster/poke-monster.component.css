@@ -1,17 +1,18 @@
 .pokemon-card {
-  /* margin: 20px auto; */
+  margin: 20px auto;
   background: linear-gradient(145deg, #dc143c, #b91c3c);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: min-content;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   color: white;
   border: 4px solid #8b0000;
   padding: 1rem;
-  display: flex;
-  flex-direction: row;
   gap: 1rem;
   align-items: center;
   justify-content: center;
-  max-width: 60%;
+  height: 100vh;
   margin: auto;
 }
 
@@ -36,7 +37,6 @@
   gap: 0.4rem;
 }
 
-/* Efecto al pasar el mouse */
 .pokedex-back-btn:hover {
   background: radial-gradient(circle at 30% 30%, #ff6b6b, #c00000);
   box-shadow:
@@ -45,7 +45,6 @@
   transform: translateY(-2px);
 }
 
-/* Efecto al hacer clic */
 .pokedex-back-btn:active {
   background: radial-gradient(circle at 70% 70%, #c00000, #7a0000);
   box-shadow:
@@ -53,13 +52,3 @@
     0 2px 5px rgba(0, 0, 0, 0.5);
   transform: translateY(2px);
 }
-
-/* Brillo animado como pantalla Pokédex */
-/* .pokedex-back-btn::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.25), transparent 70%);
-  pointer-events: none;
-} */

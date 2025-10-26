@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GenerationResponse } from '@pokemon/models/generation';
 import { PokemonService } from '@pokemon/services/pokemon.service';
-import { NavigationService } from '@services/navigation.service';
+import { NavigationService } from '@shared/services/navigation.service';
 import { forkJoin } from 'rxjs';
 
 @Component({

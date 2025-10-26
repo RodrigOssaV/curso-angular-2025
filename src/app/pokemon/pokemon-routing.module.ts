@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'index', component: PokedexComponent, title: 'Where trainers begin - PokéLab' },
   { path: 'generation/:name', component: GenerationDashboardComponent },
   { path: 'labdex/:name', component: PokeMonsterComponent },
+  { path: 'pokelab/labdex', redirectTo: 'index', pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoadingPageComponent } from "./loading-page/loading-page.component";
-
+import { LoadingPageComponent } from "@shared/components/loading-page/loading-page.component";
+import { SeparatorComponent } from "@shared/components/separator/separator.component";
 
 @NgModule({
-  declarations: [LoadingPageComponent],
+  declarations: [
+    LoadingPageComponent,
+    SeparatorComponent,
+  ],
   imports: [
     CommonModule
   ],
-  exports: [LoadingPageComponent]
+  exports: [
+    LoadingPageComponent,
+    SeparatorComponent,
+  ]
 })
 export class SharedModule { }

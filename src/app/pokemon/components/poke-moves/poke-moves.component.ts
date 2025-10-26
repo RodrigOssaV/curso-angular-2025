@@ -26,21 +26,22 @@ export class PokeMovesComponent implements OnChanges {
 
   getMoreInfoMoves(name: string) {
     // console.log(name);
-    this.pokemonService.getMove(name).subscribe({
-      next: (response) => {
-        // console.log(response);
-        // console.log(this.pokeMoveList);
-        this.pokeMoveList = this.pokeMoveList?.map((pkml: any) =>
-          pkml.move.name === response.name
-            ? { ...pkml, detail: response }
-            : pkml
-        );
-        // // this.pokeMove = response;
-        // console.log(this.pokeMoveList);
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
+    this.pokemonService.getMove(name)
+      .subscribe({
+        next: (response) => {
+          // console.log(response);
+          // console.log(this.pokeMoveList);
+          this.pokeMoveList = this.pokeMoveList?.map((pkml: any) =>
+            pkml.move.name === response.name
+              ? { ...pkml, detail: response }
+              : pkml
+          );
+          // // this.pokeMove = response;
+          console.log(this.pokeMoveList);
+        },
+        error: (error) => {
+          console.log(error);
+        },
+      });
   }
 }

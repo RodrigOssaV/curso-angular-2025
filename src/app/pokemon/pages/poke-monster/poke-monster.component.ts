@@ -6,7 +6,7 @@ import { MoveResponse } from '@pokemon/models/move';
 import { Pokemon } from '@pokemon/models/pokemon';
 import { FlavorTextEntry, Genera } from '@pokemon/models/pokemon-species';
 import { PokemonService } from '@pokemon/services/pokemon.service';
-import { NavigationService } from '@services/navigation.service';
+import { NavigationService } from '@shared/services/navigation.service';
 import { filter, map } from 'rxjs/operators';
 
 @Component({
