@@ -12,12 +12,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let move of pokeMoveList">
-        <td>{{ move.move.name }}</td>
-        <td>{{ move.detail?.accuracy !== null ? move.detail?.accuracy : '-' }}</td>
-        <td>{{ move.detail?.power !== null ? move.detail?.power : '-'}}</td>
-        <td>{{ move.detail?.pp }}</td>
-        <td>{{ move.detail?.damage_class.name }}</td>
+      <tr *ngFor="let move of pokeMoves">
+        <td>{{ move.name | formatMove }}</td>
+        <td>{{ move?.accuracy !== null ? move?.accuracy : '-' }}</td>
+        <td>{{ move?.power !== null ? move?.power : '-'}}</td>
+        <td>{{ move?.pp }}</td>
+        <td>{{ move?.damage_class?.name }}</td>
       </tr>
     </tbody>
   </table>

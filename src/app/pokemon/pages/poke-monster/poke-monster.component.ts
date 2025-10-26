@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Chain } from '@pokemon/models/evolution-chain';
-import { MoveResponse } from '@pokemon/models/move';
+import { Move } from '@pokemon/models/move';
 import { Pokemon } from '@pokemon/models/pokemon';
 import { FlavorTextEntry, Genera } from '@pokemon/models/pokemon-species';
 import { PokemonService } from '@pokemon/services/pokemon.service';
 import { NavigationService } from '@shared/services/navigation.service';
+import { forkJoin } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
 @Component({
@@ -18,7 +19,7 @@ export class PokeMonsterComponent implements OnInit {
   genera?: Genera;
   pokeMonster?: Pokemon;
   evolutionChain?: Chain;
-  pokeMovesList!: MoveResponse[];
+  pokeMovesList!: Move[];
   selectedFlavorText?: FlavorTextEntry;
   flavorTextEntries?: FlavorTextEntry[];
 
@@ -36,7 +37,6 @@ export class PokeMonsterComponent implements OnInit {
 
   ngOnInit(): void {
     const gen = this.navigationService.getGeneration();
-    console.log('🧬 Volviste desde:', gen);
     this.genUrl = gen;
 
     this.route.paramMap
@@ -53,19 +53,21 @@ export class PokeMonsterComponent implements OnInit {
   getInfoPokemon(name: string) {
     this.pokemonService.getPokemon(name).subscribe({
       next: (response) => {
-        // console.log('getPokemon: ', response);
+        console.log('getPokemon ', response);
         this.pokeMonster = response;
-        this.pokeMovesList = response.moves;
-        // console.log(this.pokeMovesList);
+        const requestMove = response.moves.map((mv => this.pokemonService.getMove(mv.move.name)));
+
+        forkJoin(requestMove)
+          .subscribe(movesResponse => {
+            this.pokeMovesList = movesResponse;
+          })
 
         this.pokemonService
           .getPokemonSpecies(this.pokeMonster.id)
           .subscribe((pk) => {
-            // console.log('getPokemonSpecies: ', pk);
             this.genera = pk.genera[0];
             this.flavorTextEntries = pk.flavor_text_entries;
             this.selectedFlavorText = this.flavorTextEntries[0];
-            // console.log(this.selectedFlavorText);
 
             const evolutionChainUrl = pk.evolution_chain.url;
             const id_evolutionChain = evolutionChainUrl
@@ -76,9 +78,7 @@ export class PokeMonsterComponent implements OnInit {
               .getEvolutionChain(Number(id_evolutionChain))
               .subscribe({
                 next: (response) => {
-                  // console.log('getEvolutionChain: ', response);
                   this.evolutionChain = response.chain;
-                  // console.log(this.evolutionChain);
                 },
                 error: (error) => {
                   console.log(error);

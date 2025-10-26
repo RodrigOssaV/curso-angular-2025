@@ -1,7 +1,7 @@
 <h3 class="section-title">Abilities</h3>
 <ul class="pokemon-list abilities-list border-left-color-li">
   <li *ngFor="let ability of abilities">
-    {{ability.ability.name}}
+    {{ ability.ability.name | formatMove }}
     <span class="hidden-ability" *ngIf="ability.is_hidden">
       (hidden ability)
     </span>

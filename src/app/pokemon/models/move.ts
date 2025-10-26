@@ -4,6 +4,10 @@ export interface Move {
   name: string;
   pp: number;
   power: number;
+  damage_class: {
+    name: string;
+    url: string;
+  }
 }
 
 export interface MoveResponse {
