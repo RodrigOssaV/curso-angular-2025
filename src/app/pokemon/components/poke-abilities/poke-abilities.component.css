@@ -10,6 +10,7 @@
   padding: 8px 12px;
   border-radius: 8px;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 .hidden-ability {

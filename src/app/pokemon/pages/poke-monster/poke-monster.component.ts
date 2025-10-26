@@ -53,7 +53,7 @@ export class PokeMonsterComponent implements OnInit {
   getInfoPokemon(name: string) {
     this.pokemonService.getPokemon(name).subscribe({
       next: (response) => {
-        console.log('getPokemon ', response);
+        // console.log('getPokemon ', response);
         this.pokeMonster = response;
         const requestMove = response.moves.map((mv => this.pokemonService.getMove(mv.move.name)));
 

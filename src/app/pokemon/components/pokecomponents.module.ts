@@ -7,6 +7,7 @@ import { EvolutionDetailDualCardComponent } from "@pokecomponents/evolution-deta
 import { MeasurementsComponent } from '@pokecomponents/measurements/measurements.component';
 import { NoEvolutionCardComponent } from '@pokecomponents/no-evolution-card/no-evolution-card.component';
 import { PokeAbilitiesComponent } from '@pokecomponents/poke-abilities/poke-abilities.component';
+import { PokeAbilityDetailComponent } from '@pokecomponents/poke-ability-detail/poke-ability-detail.component';
 import { PokeCardComponent } from '@pokecomponents/poke-card/poke-card.component';
 import { PokeEvolutionsComponent } from "@pokecomponents/poke-evolutions/poke-evolutions.component";
 import { PokeExpressInformationComponent } from '@pokecomponents/poke-express-information/poke-express-information.component';
@@ -37,6 +38,7 @@ import { SharedModule } from '@shared/shared.module';
     PokeMovesComponent,
     PokeTypesComponent,
     PokeExpressInformationComponent,
+    PokeAbilityDetailComponent,
   ],
   imports: [
     CommonModule,
@@ -59,6 +61,7 @@ import { SharedModule } from '@shared/shared.module';
     PokeMovesComponent,
     PokeTypesComponent,
     PokeExpressInformationComponent,
+    PokeAbilityDetailComponent,
   ]
 })
 export class PokecomponentsModule { }

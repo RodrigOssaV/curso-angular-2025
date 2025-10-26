@@ -34,7 +34,7 @@ export interface FlavorTextEntry {
     name: string;
     url: string;
   };
-  version: {
+  version_group: {
     name: string;
     url: string;
   }

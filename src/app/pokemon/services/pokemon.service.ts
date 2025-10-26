@@ -1,12 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@environment/environment';
-import { GenerationResponse, GenerationsResponse } from '@pokemon/models/generation';
+import { AbilityResponse } from '@pokemon/models/ability';
 import { EvolutionChainResponse } from '@pokemon/models/evolution-chain';
+import {
+  GenerationResponse,
+  GenerationsResponse,
+} from '@pokemon/models/generation';
+import { Move } from '@pokemon/models/move';
 import { Pokemon, PokemonResponse } from '@pokemon/models/pokemon';
 import { PokemonSpeciesResponse } from '@pokemon/models/pokemon-species';
 import { map, Observable } from 'rxjs';
-import { Move, MoveResponse } from '@pokemon/models/move';
 
 @Injectable({
   providedIn: 'root',
@@ -59,5 +63,16 @@ export class PokemonService {
   getMove(name: string): Observable<Move> {
     const moveUrl = `${this.url}/move/${name}`;
     return this.http.get<Move>(moveUrl);
+  }
+
+  getAbility(url: string): Observable<AbilityResponse> {
+    return this.http.get<AbilityResponse>(url).pipe(
+      map((response) => ({
+        ...response,
+        flavor_text_entries: response.flavor_text_entries.filter(
+          (flavor) => flavor.language.name === 'en'
+        )
+      }))
+    );
   }
 }
