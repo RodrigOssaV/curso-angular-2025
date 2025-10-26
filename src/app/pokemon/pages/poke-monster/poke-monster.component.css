@@ -6,4 +6,60 @@
   color: white;
   border: 4px solid #8b0000;
   padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 60%;
+  margin: auto;
 }
+
+.pokedex-back-btn {
+  background: radial-gradient(circle at 30% 30%, #ff4b4b, #a80000);
+  border: 3px solid #6b0000;
+  border-radius: 50px;
+  color: #fff;
+  font-family: 'Press Start 2P', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.7rem;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+/* Efecto al pasar el mouse */
+.pokedex-back-btn:hover {
+  background: radial-gradient(circle at 30% 30%, #ff6b6b, #c00000);
+  box-shadow:
+    inset 0 3px 6px rgba(255, 255, 255, 0.3),
+    0 6px 14px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Efecto al hacer clic */
+.pokedex-back-btn:active {
+  background: radial-gradient(circle at 70% 70%, #c00000, #7a0000);
+  box-shadow:
+    inset 0 3px 6px rgba(0, 0, 0, 0.5),
+    0 2px 5px rgba(0, 0, 0, 0.5);
+  transform: translateY(2px);
+}
+
+/* Brillo animado como pantalla Pokédex */
+/* .pokedex-back-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.25), transparent 70%);
+  pointer-events: none;
+} */

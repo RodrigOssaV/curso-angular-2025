@@ -1,17 +1,21 @@
 <section class="pokemon-card">
 
-  <app-poke-card [pokeCard]="pokeMonster" [pokeCardGenera]="genera" [pokeCardFlavorText]="selectedFlavorText" />
+  <div>
+    <button class="pokedex-back-btn" (click)="goBackPokeLab()">
+      <span>◀ Back</span>
+    </button>
 
-  <app-pokemon-measurements [pokeMeasurements]="pokeMonster" />
+    <app-poke-card [pokeCard]="pokeMonster" [pokeCardGenera]="genera" [pokeCardFlavorText]="selectedFlavorText" />
+    <app-pokemon-measurements [pokeMeasurements]="pokeMonster" />
+    <app-poke-types [pokeTypes]="pokeMonster" />
 
-  <app-poke-types [pokeTypes]="pokeMonster" />
+    <app-poke-abilities [pokeAbilities]="pokeMonster" />
+  </div>
 
-  <app-poke-abilities [pokeAbilities]="pokeMonster" />
-
-  <app-poke-stats [pokeStats]="pokeMonster" />
-
-  <app-poke-evolutions [evolutionChain]="evolutionChain" />
-
-  <app-poke-moves [pokeMoves]="pokeMovesList"/>
+  <div>
+    <app-poke-stats [pokeStats]="pokeMonster" />
+    <app-poke-evolutions [evolutionChain]="evolutionChain" />
+    <app-poke-moves [pokeMoves]="pokeMovesList" />
+  </div>
 
 </section>
